@@ -1,0 +1,37 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+Obj/
+UnityGenerated/
+Library/
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+ 
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+Ismar_BaseProject/Assets/Scripts/GlobalData.cs.meta
+Ismar_BaseProject/Assets/StreamingAssets/QCAR/unity.txt
+Ismar_BaseProject/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll
+Ismar_BaseProject/Assets/Scenes/Empty.unity.meta
