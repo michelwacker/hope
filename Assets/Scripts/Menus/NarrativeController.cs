@@ -6,6 +6,7 @@ using System.Text;
 public class NarrativeController : MonoBehaviour
 {
 	const float READ_STEP = 0.04f;
+	const float READ_DISAPPEAR = 3.0f;
 
 	public static void Write(string text)
 	{
@@ -40,5 +41,9 @@ public class NarrativeController : MonoBehaviour
 			output.text = currentText.ToString();
 			yield return new WaitForSeconds (READ_STEP);
 		}
+
+		yield return new WaitForSeconds (READ_DISAPPEAR);
+		output.text = "";
+
 	}
 }
