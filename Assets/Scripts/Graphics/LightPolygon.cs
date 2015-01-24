@@ -89,34 +89,96 @@ public class LightPolygon : MonoBehaviour {
 			}
 		}
 
-		for(int k = sunRaysIndex[0]; k != sunRaysIndex[1];) {
+		/*int initialIndex;
+		int endIndex;
+		if( Mathf.Abs(sunRaysIndex[1] - sunRaysIndex[0]) == 1) {
+			initialIndex = sunRaysIndex[1];
+			endIndex = sunRaysIndex[0];
+
+		} else {
+			initialIndex = sunRaysIndex[0];
+			endIndex = sunRaysIndex[1];
+		}
+		bool finishTurn = false;
+		for(int k = initialIndex; k != endIndex;) {
 			polygonVertices.Add(windowVertices[k]);
 			k++;
 			if(k >= windowVertices.Length) {
-				k = 0;
-				Debug.Log("K " + k);
+				finishTurn = true;
+				break;
 			}
+		}*/
+
+
+		Debug.Log("**********");
+		Debug.Log("sunRays A " + sunRaysIndex[0] + " B " + sunRaysIndex[1]);
+
+		if(sunRaysIndex[0] != 0) {
+			polygonVertices.Add(windowVertices[0]);
+			polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
+		} else {
+			polygonVertices.Add(windowVertices[0]);
 		}
 
-
-		polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
 		Wall wall = null;
-		for(int i = sunRays.Length - 1; i >= 0 ; i--) {
-			Vector3 sunRay = sunRays[i];
-			RaycastHit hit;
-			Physics.Raycast(sunPos, sunRay, out hit);
-			if(wall == null) {
-				wall = hit.collider.gameObject.GetComponent<Wall>();
-			} else {
-				Wall wall2 = hit.collider.gameObject.GetComponent<Wall>();
-				polygonVertices.Add(wall2.getMiddleCorner(wall));
+		if(sunRaysIndex[0] != 0) {
+			for(int i = sunRays.Length - 1; i >= 0 ; i--) {
+				Vector3 sunRay = sunRays[i];
+				RaycastHit hit;
+				Physics.Raycast(sunPos, sunRay, out hit);
+				if(wall == null) {
+					wall = hit.collider.gameObject.GetComponent<Wall>();
+					Debug.DrawLine(sunPos, hit.point, Color.red);
+				} else {
+					Wall wall2 = hit.collider.gameObject.GetComponent<Wall>();
+					polygonVertices.Add(wall2.getMiddleCorner(wall));
+					Debug.DrawLine(sunPos, hit.point, Color.blue);
+				}
+				polygonVertices.Add(hit.point);
+				
 			}
-			polygonVertices.Add(hit.point);
-			Debug.DrawLine(sunPos, hit.point, Color.red);
+		} else {
+			for(int i = 0; i < sunRays.Length ; i++) {
+				Vector3 sunRay = sunRays[i];
+				RaycastHit hit;
+				Physics.Raycast(sunPos, sunRay, out hit);
+				if(wall == null) {
+					wall = hit.collider.gameObject.GetComponent<Wall>();
+					Debug.DrawLine(sunPos, hit.point, Color.red);
+				} else {
+					Wall wall2 = hit.collider.gameObject.GetComponent<Wall>();
+					polygonVertices.Add(wall2.getMiddleCorner(wall));
+					Debug.DrawLine(sunPos, hit.point, Color.blue);
+				}
+				polygonVertices.Add(hit.point);
+
+			}
+		}
+
+		if(sunRaysIndex[0] != 0) {
+			polygonVertices.Add(windowVertices[sunRaysIndex[0]]);
+		} else {
+			if(sunRaysIndex[1] != 1) {
+				polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
+			} 
+			polygonVertices.Add(windowVertices[1]);
 		}
 
 
+		/*if(sunRaysIndex[1] > 1) {
+			polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
+ 		}*/
+		/*if(finishTurn) {
+			Debug.Log("vertices " + polygonVertices.Count + " endIndex " + endIndex + " initial Index " + initialIndex );
+			for(int k = 0; k != initialIndex;) {
+				polygonVertices.Add(windowVertices[k]);
+				k--;
+				if(k<0) {
+					k=windowVertices.Length - 1;
+				}
+			}
 
-
+			Debug.Log("end vertices " + polygonVertices.Count);
+		}*/
 	}
 }
