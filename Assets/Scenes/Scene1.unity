@@ -833,7 +833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - {fileID: 353313761}
-  - {fileID: 0}
 --- !u!114 &353313761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +1008,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - {fileID: 554106945}
-  - {fileID: 0}
 --- !u!60 &554106947
 PolygonCollider2D:
   m_ObjectHideFlags: 0
