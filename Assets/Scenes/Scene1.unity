@@ -658,6 +658,7 @@ GameObject:
   - 212: {fileID: 353313756}
   - 61: {fileID: 353313758}
   - 114: {fileID: 353313759}
+  - 114: {fileID: 353313760}
   m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
@@ -723,7 +724,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454c96edbc4d543729c6d28c9578f120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactions: []
+  interactions:
+  - {fileID: 353313760}
+--- !u!114 &353313760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353313755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c70280163c964cf5bd69acd37d57211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crazinessOnBreak: 0
+  crazinessOnUse: 0
 --- !u!1 &524046689
 GameObject:
   m_ObjectHideFlags: 0
