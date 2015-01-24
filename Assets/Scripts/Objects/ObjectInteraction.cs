@@ -20,14 +20,20 @@ public class ObjectInteraction : MonoBehaviour
 		}
 		else
 		{
-			IObjectInteraction i;
+			IUseInteraction u;
+			IBreakInteraction b;
+
 			foreach (MonoBehaviour interaction in interactions)
 			{
-				if (interaction is IObjectInteraction)
+				if (interaction is IUseInteraction)
 				{
-					i = (IObjectInteraction) interaction;
-					useDelegate += i.Use;
-					breakDelegate += i.Break;
+					u = (IUseInteraction) interaction;
+					useDelegate += u.Use;
+				}
+				if (interaction is IBreakInteraction)
+				{
+					b = (IBreakInteraction) interaction;
+					BreakDelegate += b.Break;
 				}
 			}
 		}
@@ -60,8 +66,12 @@ public class ObjectInteraction : MonoBehaviour
 	}
 }
 
-public interface IObjectInteraction
+public interface IUseInteraction
 {
 	void Use();
+}
+
+public interface IBreakInteraction
+{
 	void Break();
 }
