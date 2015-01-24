@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Player : MonoBehaviour
 {
+	public static event Action<GameObject> WalkBegin;
+	public static event Action<GameObject> WalkComplete;
+
 	public float speedFactor = 0.5f;
 	public float moveDelay = 0.2f;
 
@@ -12,6 +16,7 @@ public class Player : MonoBehaviour
 
 	private AudioSource source;
 	private float initY;
+	private GameObject currentTarget;
 
 	public bool facingRight
 	{
@@ -54,10 +59,15 @@ public class Player : MonoBehaviour
 		
 	}
 
-	public void WalkToPosition(Vector3 position)
+	public void WalkToPosition(Vector3 position, GameObject gameObject)
 	{
 		// if already walking, cancel old tween
 		StopWalking ();
+		// start new walk
+		currentTarget = gameObject;
+		// dispatch event
+		Action<GameObject> handler = WalkBegin;
+		if (handler != null) handler(gameObject);
 		// calculate anchor dependant position
 		Vector3 p = position + anchorDist;
 		// synch movement directoin
@@ -72,8 +82,8 @@ public class Player : MonoBehaviour
 
 	private IEnumerator StartWalking(Vector3 p, float delay)
 	{
-
-		yield return new WaitForSeconds (delay);
+		if (delay > 0f)
+			yield return new WaitForSeconds (delay);
 
 		// TODO set animation
 		
@@ -103,29 +113,35 @@ public class Player : MonoBehaviour
 		{
 			source.Stop ();
 		}
-	}
-	
-	public void Flip()
-	{
-		// invert graphics scale
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		currentTarget = null;
 	}
 
 	void OnWalkUpdate()
 	{
+		// scale player depending on y position
 		Vector3 theScale = transform.localScale;
 		theScale.y = (1f - verticalScaleFactor) + verticalScaleFactor * transform.position.y / initY;
+
 		float x = Mathf.Abs (theScale.y);
 		x *= (theScale.x < 0f) ? -1f : 1f;
+
 		theScale.x = x;
 		transform.localScale = theScale;
 	}
 
 	void OnWalkComplete()
 	{
+		Action<GameObject> handler = WalkComplete;
+		if (handler != null) handler(currentTarget);
+
 		StopWalking ();
-		// TODO set animation: stop
+	}
+
+	void Flip()
+	{
+		// invert graphics scale
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 }
