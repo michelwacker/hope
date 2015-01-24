@@ -48,17 +48,6 @@ public class Player : MonoBehaviour
 		initY = transform.position.y;
 	}
 
-	void Start()
-	{
-
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
-
 	public void WalkToPosition(Vector3 position, GameObject gameObject)
 	{
 		// if already walking, cancel old tween

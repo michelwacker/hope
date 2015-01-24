@@ -4,12 +4,6 @@ using System.Collections;
 public class InteractionMenuManager : MonoBehaviour
 {
 
-	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-
 	public void HideMenu()
 	{
 		gameObject.SetActive (false);
