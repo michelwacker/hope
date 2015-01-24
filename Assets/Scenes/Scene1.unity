@@ -181,15 +181,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2099444, guid: 426f507f8daa64b60b9e95cd628ccfcc, type: 2}
       propertyPath: m_BackGroundColor.r
-      value: 0
+      value: .705882311
       objectReference: {fileID: 0}
     - target: {fileID: 2099444, guid: 426f507f8daa64b60b9e95cd628ccfcc, type: 2}
       propertyPath: m_BackGroundColor.g
-      value: 0
+      value: .963488936
       objectReference: {fileID: 0}
     - target: {fileID: 2099444, guid: 426f507f8daa64b60b9e95cd628ccfcc, type: 2}
       propertyPath: m_BackGroundColor.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2099444, guid: 426f507f8daa64b60b9e95cd628ccfcc, type: 2}
       propertyPath: m_TargetTexture
@@ -1189,7 +1189,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
+  m_BackGroundColor: {r: .705882311, g: .963488936, b: 1, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
