@@ -682,11 +682,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 353313757}
   - 212: {fileID: 353313756}
+  - 95: {fileID: 353313762}
   - 61: {fileID: 353313758}
   - 114: {fileID: 353313759}
   - 114: {fileID: 353313761}
-  - 114: {fileID: 353313760}
-  - 95: {fileID: 353313762}
   m_Layer: 0
   m_Name: Tray
   m_TagString: Untagged
@@ -754,20 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - {fileID: 353313761}
-  - {fileID: 353313760}
---- !u!114 &353313760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 353313755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c70280163c964cf5bd69acd37d57211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crazinessOnBreak: 0
-  crazinessOnUse: 0
+  - {fileID: 0}
 --- !u!114 &353313761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,7 +847,6 @@ GameObject:
   - 60: {fileID: 554106947}
   - 114: {fileID: 554106946}
   - 114: {fileID: 554106945}
-  - 114: {fileID: 554106944}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
@@ -920,19 +905,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4f7cd19cc3654ad1ae5f94988ac3f1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &554106944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 554106940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c70280163c964cf5bd69acd37d57211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crazinessOnBreak: 0
-  crazinessOnUse: 0
 --- !u!114 &554106945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - {fileID: 554106945}
-  - {fileID: 554106944}
+  - {fileID: 0}
 --- !u!60 &554106947
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1270,7 +1242,9 @@ GameObject:
   - 60: {fileID: 902137861}
   - 114: {fileID: 902137862}
   - 114: {fileID: 902137865}
-  - 114: {fileID: 902137864}
+  - 114: {fileID: 902137869}
+  - 114: {fileID: 902137868}
+  - 114: {fileID: 902137867}
   - 114: {fileID: 902137866}
   m_Layer: 0
   m_Name: Bed
@@ -1509,8 +1483,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactions:
   - {fileID: 902137865}
-  - {fileID: 902137864}
-  - {fileID: 902137866}
+  - {fileID: 902137869}
+  - {fileID: 902137867}
 --- !u!95 &902137863
 Animator:
   serializedVersion: 3
@@ -1526,19 +1500,6 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &902137864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 902137858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c70280163c964cf5bd69acd37d57211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  crazinessOnBreak: 0
-  crazinessOnUse: 0
 --- !u!114 &902137865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1558,9 +1519,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 902137858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0201b2260f3b948fcbcded2ed95f19fa, type: 3}
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  output: I'm not sleepy
+--- !u!114 &902137867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd35ddd0ffdd42b3b1e685d049ab3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  moment: 0
+  actions:
+  - {fileID: 902137866}
+--- !u!114 &902137868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: That was gooood!
+--- !u!114 &902137869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f381da8d25f4a4167b871347c543b86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  moment: 0
+  actions:
+  - {fileID: 902137868}
 --- !u!1 &969749558
 GameObject:
   m_ObjectHideFlags: 0
