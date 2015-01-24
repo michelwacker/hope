@@ -5,9 +5,11 @@ public class InputCheck : MonoBehaviour
 {
 	public bool allowMultitouch;
 	public bool blockAfterSelection;
+	public bool allowDrag;
 	public MonoBehaviour inputHandler;
 	private IInputHandler _inputHandler;
-	
+
+
 	private bool blocked;
 	private bool isDragging;
 	
@@ -30,7 +32,7 @@ public class InputCheck : MonoBehaviour
 		if (Input.GetMouseButtonDown(0))
 		{
 			RayCastToPosition(Input.mousePosition);
-			isDragging = true;
+			if (allowDrag) isDragging = true;
 		}
 		
 		if (Input.GetMouseButtonUp(0))
