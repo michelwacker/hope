@@ -27,19 +27,8 @@ public class LightPolygon : MonoBehaviour {
 			v3.transform.position,
 			v4.transform.position,
 		};
-		// Use the triangulator to get indices for creating triangles
-
-
-		/*msh.vertices = vertices;
-		msh.triangles = indices;
-		msh.RecalculateNormals();
-		msh.RecalculateBounds();*/
-		
-		// Set up game object with mesh;
-
-		
 	}
-	
+	MeshFilter filter;
 	// Update is called once per frame
 	void Update () {
 		createRayCasts();
@@ -51,12 +40,12 @@ public class LightPolygon : MonoBehaviour {
 		for (int i=0; i<vertices.Length; i++) {
 			vertices[i] = new Vector3(polygonVertices[i].x, polygonVertices[i].y, 0);
 		}
-		if(msh == null) {
-			msh = new Mesh();
+		Mesh msh = new Mesh();
+		if(filter == null) {
 			gameObject.AddComponent(typeof(MeshRenderer));
-			MeshFilter filter = gameObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
-			filter.mesh = msh;
+			filter = gameObject.AddComponent(typeof(MeshFilter)) as MeshFilter;
 		}
+		filter.mesh = msh;
 		msh.vertices = vertices;
 		msh.triangles = indices;
 		msh.RecalculateNormals();
@@ -84,18 +73,6 @@ public class LightPolygon : MonoBehaviour {
 				float angle = Vector3.Angle(dir, dir2);
 
 				if(angle > maxAngle) {
-					if(i < j) {
-						sunRays[0] = dir;
-						sunRays[1] = dir2;
-						sunRaysIndex[0] = i;
-						sunRaysIndex[1] = j;
-					} else {
-						sunRays[0] = dir2;
-						sunRays[1] = dir;
-						sunRaysIndex[0] = j;
-						sunRaysIndex[1] = i;
-					}
-
 					sunRays[0] = dir;
 					sunRays[1] = dir2;
 					sunRaysIndex[0] = i;
@@ -106,32 +83,7 @@ public class LightPolygon : MonoBehaviour {
 			}
 		}
 
-		/*int initialIndex;
-		int endIndex;
-		if( Mathf.Abs(sunRaysIndex[1] - sunRaysIndex[0]) == 1) {
-			initialIndex = sunRaysIndex[1];
-			endIndex = sunRaysIndex[0];
-
-		} else {
-			initialIndex = sunRaysIndex[0];
-			endIndex = sunRaysIndex[1];
-		}
-		bool finishTurn = false;
-		for(int k = initialIndex; k != endIndex;) {
-			polygonVertices.Add(windowVertices[k]);
-			k++;
-			if(k >= windowVertices.Length) {
-				finishTurn = true;
-				break;
-			}
-		}*/
-
-
-		Debug.Log("**********");
-		Debug.Log("sunRays A " + sunRaysIndex[0] + " B " + sunRaysIndex[1]);
-
 		for(int i=0; i <= sunRaysIndex[0]; i++) {
-			Debug.Log("window vertice " + i);
 			polygonVertices.Add(windowVertices[i]);
 		}
 
@@ -151,27 +103,14 @@ public class LightPolygon : MonoBehaviour {
 				if(!wall2.Equals(wall)) {
 					polygonVertices.Add(wall2.getMiddleCorner(wall));
 					Debug.DrawLine(sunPos, hit.point, Color.blue);
-					Debug.Log("wall middle vertice " );
 				}
 			}
 			polygonVertices.Add(hit.point);
-			Debug.Log("wall vertice " );
 		}
 
-		Debug.Log("!!!!");
 		for(int i = sunRaysIndex[1]; i<=3; i++) {
 			polygonVertices.Add(windowVertices[i]);
-			Debug.Log("window vertice " + i);
 		}
-
-		Debug.Log("Count " + polygonVertices.Count);
-		/*for(int i = sunRaysIndex[1] ; i >= 3 ; i--) {
-			Debug.Log("window vertice " + i);
-			polygonVertices.Add(windowVertices[i]);
-		}
-
-		Debug.Log("**********");*/
-
 
 	}
 }
