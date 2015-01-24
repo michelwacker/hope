@@ -44,12 +44,12 @@ public class ObjectInteraction : MonoBehaviour
 
 	protected void DefaultUse(int timesCalled)
 	{
-		Debug.Log ("Use " + name);
+		NarrativeController.Write("Use " + name);
 	}
 
 	protected void DefaultBreak(int timesCalled)
 	{
-		Debug.Log ("Break " + name);
+		NarrativeController.Write("Break " + name);
 	}
 
 	public void Use()

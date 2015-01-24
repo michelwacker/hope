@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Text;
 
 public class NarrativeController : MonoBehaviour
 {
+	const float READ_STEP = 0.04f;
+
 	public static void Write(string text)
 	{
 		instance.StartTextOutput (text);
@@ -11,6 +14,7 @@ public class NarrativeController : MonoBehaviour
 	private static NarrativeController instance;
 
 	public Text output;
+	private string textToBeWritten;
 	// Use this for initialization
 	void Awake ()
 	{
@@ -22,7 +26,19 @@ public class NarrativeController : MonoBehaviour
 
 	void StartTextOutput(string text)
 	{
-		// TODO start coroutine here instead
-		output.text = text;
+		StopCoroutine("writeSlowly");
+		textToBeWritten = text;
+		StartCoroutine("writeSlowly");
+	}
+
+	IEnumerator writeSlowly() 
+	{
+		StringBuilder currentText = new StringBuilder();
+		foreach(char c in textToBeWritten) 
+		{
+			currentText.Append(c);
+			output.text = currentText.ToString();
+			yield return new WaitForSeconds (READ_STEP);
+		}
 	}
 }
