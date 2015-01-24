@@ -6,6 +6,13 @@ public class Player : MonoBehaviour
 {
 	public static event Action<GameObject> WalkBegin;
 	public static event Action<GameObject> WalkComplete;
+	
+	public static void AddCraziness(int craziness)
+	{
+		instance.craziness += craziness;
+	}
+
+	private static Player instance;
 
 	public float speedFactor = 0.5f;
 	public float moveDelay = 0.2f;
@@ -17,6 +24,8 @@ public class Player : MonoBehaviour
 	private AudioSource source;
 	private float initY;
 	private GameObject currentTarget;
+
+	private int craziness = 0;
 
 	public bool facingRight
 	{
@@ -32,6 +41,11 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+
 		walkAnchor = transform.FindChild ("WalkAnchor");
 		if (walkAnchor == null)
 		{
