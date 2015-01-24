@@ -33,7 +33,7 @@ public class ObjectInteraction : MonoBehaviour
 				if (interaction is IBreakInteraction)
 				{
 					b = (IBreakInteraction) interaction;
-					BreakDelegate += b.Break;
+					breakDelegate += b.Break;
 				}
 			}
 		}
