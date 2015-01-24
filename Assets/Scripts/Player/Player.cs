@@ -7,9 +7,9 @@ public class Player : MonoBehaviour
 	public static event Action<GameObject> WalkBegin;
 	public static event Action<GameObject> WalkComplete;
 	
-	public static void AddCraziness(int craziness)
+	public static void AddMadness(int madness)
 	{
-		instance.craziness += craziness;
+		instance.madness += madness;
 	}
 
 	private static Player instance;
@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
 	private float initY;
 	private GameObject currentTarget;
 
-	private int craziness = 0;
+	private int madness = 0;
 
 	public bool facingRight
 	{
