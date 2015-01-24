@@ -63,6 +63,7 @@ SubShader {
                     }
                     
                     
+                   //return diffuseTex + volumetricLight;
                    return fragColor;
                 }
             ENDCG 

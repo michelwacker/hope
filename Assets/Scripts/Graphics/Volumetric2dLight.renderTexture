@@ -6,8 +6,8 @@ RenderTexture:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Volumetric2dLight
-  m_Width: 256
-  m_Height: 256
+  m_Width: 1024
+  m_Height: 768
   m_AntiAliasing: 1
   m_DepthFormat: 1
   m_ColorFormat: 0
