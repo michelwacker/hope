@@ -9,6 +9,11 @@ public class SceneMenu: Editor
 	{
 		OpenScene ("Scene1");
 	}
+	[MenuItem("Open Scene/Raycast Test")]
+	public static void OpenRaycastTest()
+	{
+		OpenScene ("hope");
+	}
 	private static void OpenScene(string name)
 	{
 		if (EditorApplication.SaveCurrentSceneIfUserWantsTo())
