@@ -2,7 +2,7 @@
 	Properties {
 	   _MainTex ("MainTex", 2D) = "Diffuse" {}
 	   _VolumetricLight ("VolumetricLight", 2D) = "Bump1" {}
-	   //_Lightmap ("Lightmap", 2D) = "Bump2" {}
+	   _Lightmap ("Lightmap", 2D) = "Bump2" {}
 	   _Color ("Color", Color) = (0.1,0.8,0.1,1)
 	}
 
@@ -22,11 +22,11 @@ SubShader {
                 
                 float4 _MainTex_ST;
                 float4 _VolumetricLight_ST;
-                //float4 _Lightmap_ST;
+                float4 _Lightmap_ST;
                
            		sampler2D _MainTex;
                 sampler2D _VolumetricLight;
-                //sampler2D _Lightmap;
+                sampler2D _Lightmap;
                 float4 _Color;
            
                 struct v2f {
@@ -50,10 +50,14 @@ SubShader {
                 float4 frag(v2f IN) : COLOR {
                     half4 diffuseTex = tex2D (_MainTex, IN.uv);
                     half4 volumetricLight = tex2D (_VolumetricLight, IN.uv);
-                    //half4 LightMapTex = tex2D (_Lightmap, IN.uv_MainTex);
+                    half4 lightMapTex = tex2D (_Lightmap, IN.uv);
                     half4 fragColor;
                     if(volumetricLight.a > 0.1) {
-                    	fragColor = diffuseTex + half4(0.4,0.4,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
+                    	if(lightMapTex.a > 0) {
+                    		fragColor = diffuseTex + half4(0.4,0.4,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
+                    	} else {
+                    		fragColor = diffuseTex/2 + half4(0.1,0.1,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
+                    	}
                     } else {
                     	fragColor = diffuseTex/2;// / (1,1,1,1); //half4(1,0,0,0.5);//diffuseTex;
                     }
