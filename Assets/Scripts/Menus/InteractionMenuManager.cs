@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class InteractionMenuManager : MonoBehaviour
 {
-	public Text headline;
+	public Text breakButtonText;
+	public Text useButtonText;
+
 	private ObjectInteraction interaction;
 
 	public void HideMenu()
@@ -20,9 +22,13 @@ public class InteractionMenuManager : MonoBehaviour
 		{
 			Debug.LogWarning("Target object has no interaction script!");
 		}
-		if (headline != null)
+		if (breakButtonText != null)
 		{
-			headline.text = go.name;
+			breakButtonText.text = "Break " +go.name.ToLower() + "!";
+		}
+		if (useButtonText != null)
+		{
+			useButtonText.text = "Use " +go.name.ToLower() +".";
 		}
 		// if the game object has a menu anchor, use it.
 		Transform t = go.transform.FindChild ("MenuAnchor");
