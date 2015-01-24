@@ -1271,6 +1271,7 @@ GameObject:
   - 114: {fileID: 902137862}
   - 114: {fileID: 902137865}
   - 114: {fileID: 902137864}
+  - 114: {fileID: 902137866}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -1509,6 +1510,7 @@ MonoBehaviour:
   interactions:
   - {fileID: 902137865}
   - {fileID: 902137864}
+  - {fileID: 902137866}
 --- !u!95 &902137863
 Animator:
   serializedVersion: 3
@@ -1546,6 +1548,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f781d389144224071849068226d59d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &902137866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0201b2260f3b948fcbcded2ed95f19fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &969749558
