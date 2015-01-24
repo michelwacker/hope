@@ -5,11 +5,14 @@ public class ObjectInteraction : MonoBehaviour
 {
 	public MonoBehaviour[] interactions;
 
-	protected delegate void UseDelegate ();
+	protected delegate void UseDelegate (int timesCalled);
 	protected UseDelegate useDelegate;
 
-	protected delegate void BreakDelegate ();
+	protected delegate void BreakDelegate (int timesCalled);
 	protected BreakDelegate breakDelegate;
+
+	private int timesCalledUse;
+	private int timesCalledBreak;
 
 	protected void Awake()
 	{
@@ -39,12 +42,12 @@ public class ObjectInteraction : MonoBehaviour
 		}
 	}
 
-	protected void DefaultUse()
+	protected void DefaultUse(int timesCalled)
 	{
 		Debug.Log ("Use " + name);
 	}
 
-	protected void DefaultBreak()
+	protected void DefaultBreak(int timesCalled)
 	{
 		Debug.Log ("Break " + name);
 	}
@@ -53,7 +56,7 @@ public class ObjectInteraction : MonoBehaviour
 	{
 		if (useDelegate != null)
 		{
-			useDelegate();
+			useDelegate(++timesCalledUse);
 		}
 	}
 
@@ -61,17 +64,17 @@ public class ObjectInteraction : MonoBehaviour
 	{
 		if (breakDelegate != null)
 		{
-			breakDelegate();
+			breakDelegate(++timesCalledBreak);
 		}
 	}
 }
 
 public interface IUseInteraction
 {
-	void Use();
+	void Use(int timesCalled);
 }
 
 public interface IBreakInteraction
 {
-	void Break();
+	void Break(int timesCalled);
 }

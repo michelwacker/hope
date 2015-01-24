@@ -9,14 +9,14 @@ public class CrazinessModifier : MonoBehaviour, IUseInteraction, IBreakInteracti
 	public int crazinessOnUse = 0;
 
 	#region IBreakInteraction implementation
-	public void Break ()
+	public void Break (int timesCalled)
 	{
 		Player.AddCraziness (crazinessOnBreak);
 	}
 	#endregion
 
 	#region IUseInteraction implementation
-	public void Use ()
+	public void Use (int timesCalled)
 	{
 		Player.AddCraziness (crazinessOnUse);
 	}
