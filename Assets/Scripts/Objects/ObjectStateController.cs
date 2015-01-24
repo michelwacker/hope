@@ -14,7 +14,7 @@ public class ObjectStateController : MonoBehaviour, IUseInteraction, IBreakInter
 	}
 	#region IBreakInteraction implementation
 
-	public void Break ()
+	public void Break (int timesCalled)
 	{
 		if (anim != null)
 			anim.SetTrigger ("Break");
@@ -24,7 +24,7 @@ public class ObjectStateController : MonoBehaviour, IUseInteraction, IBreakInter
 
 	#region IUseInteraction implementation
 
-	public void Use ()
+	public void Use (int timesCalled)
 	{
 		if (anim != null)
 			anim.SetTrigger ("Use");
