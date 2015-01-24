@@ -78,12 +78,29 @@ public class LightPolygon : MonoBehaviour {
 			Vector3 dir = sunWindowVerticesDirections[i];
 			for(int j = 0; j < sunWindowVerticesDirections.Length; j++) {
 				Vector3 dir2 = sunWindowVerticesDirections[j];
+				if(dir.Equals(dir2)) {
+					continue;
+				}
 				float angle = Vector3.Angle(dir, dir2);
+
 				if(angle > maxAngle) {
+					if(i < j) {
+						sunRays[0] = dir;
+						sunRays[1] = dir2;
+						sunRaysIndex[0] = i;
+						sunRaysIndex[1] = j;
+					} else {
+						sunRays[0] = dir2;
+						sunRays[1] = dir;
+						sunRaysIndex[0] = j;
+						sunRaysIndex[1] = i;
+					}
+
 					sunRays[0] = dir;
 					sunRays[1] = dir2;
 					sunRaysIndex[0] = i;
 					sunRaysIndex[1] = j;
+					
 					maxAngle = angle;
 				}
 			}
@@ -113,72 +130,48 @@ public class LightPolygon : MonoBehaviour {
 		Debug.Log("**********");
 		Debug.Log("sunRays A " + sunRaysIndex[0] + " B " + sunRaysIndex[1]);
 
-		if(sunRaysIndex[0] != 0) {
-			polygonVertices.Add(windowVertices[0]);
-			polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
-		} else {
-			polygonVertices.Add(windowVertices[0]);
+		for(int i=0; i <= sunRaysIndex[0]; i++) {
+			Debug.Log("window vertice " + i);
+			polygonVertices.Add(windowVertices[i]);
 		}
+
 
 		Wall wall = null;
-		if(sunRaysIndex[0] != 0) {
-			for(int i = sunRays.Length - 1; i >= 0 ; i--) {
-				Vector3 sunRay = sunRays[i];
-				RaycastHit hit;
-				Physics.Raycast(sunPos, sunRay, out hit);
-				if(wall == null) {
-					wall = hit.collider.gameObject.GetComponent<Wall>();
-					Debug.DrawLine(sunPos, hit.point, Color.red);
-				} else {
-					Wall wall2 = hit.collider.gameObject.GetComponent<Wall>();
+
+		for(int i = 0; i < sunRays.Length ; i++) {
+			Vector3 sunRay = sunRays[i];
+			RaycastHit hit;
+			Physics.Raycast(sunPos, sunRay, out hit);
+			if(wall == null) {
+				wall = hit.collider.gameObject.GetComponent<Wall>();
+				Debug.DrawLine(sunPos, hit.point, Color.red);
+			} else {
+
+				Wall wall2 = hit.collider.gameObject.GetComponent<Wall>();
+				if(!wall2.Equals(wall)) {
 					polygonVertices.Add(wall2.getMiddleCorner(wall));
 					Debug.DrawLine(sunPos, hit.point, Color.blue);
+					Debug.Log("wall middle vertice " );
 				}
-				polygonVertices.Add(hit.point);
-				
 			}
-		} else {
-			for(int i = 0; i < sunRays.Length ; i++) {
-				Vector3 sunRay = sunRays[i];
-				RaycastHit hit;
-				Physics.Raycast(sunPos, sunRay, out hit);
-				if(wall == null) {
-					wall = hit.collider.gameObject.GetComponent<Wall>();
-					Debug.DrawLine(sunPos, hit.point, Color.red);
-				} else {
-					Wall wall2 = hit.collider.gameObject.GetComponent<Wall>();
-					polygonVertices.Add(wall2.getMiddleCorner(wall));
-					Debug.DrawLine(sunPos, hit.point, Color.blue);
-				}
-				polygonVertices.Add(hit.point);
-
-			}
+			polygonVertices.Add(hit.point);
+			Debug.Log("wall vertice " );
 		}
 
-		if(sunRaysIndex[0] != 0) {
-			polygonVertices.Add(windowVertices[sunRaysIndex[0]]);
-		} else {
-			if(sunRaysIndex[1] != 1) {
-				polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
-			} 
-			polygonVertices.Add(windowVertices[1]);
+		Debug.Log("!!!!");
+		for(int i = sunRaysIndex[1]; i<=3; i++) {
+			polygonVertices.Add(windowVertices[i]);
+			Debug.Log("window vertice " + i);
 		}
 
+		Debug.Log("Count " + polygonVertices.Count);
+		/*for(int i = sunRaysIndex[1] ; i >= 3 ; i--) {
+			Debug.Log("window vertice " + i);
+			polygonVertices.Add(windowVertices[i]);
+		}
 
-		/*if(sunRaysIndex[1] > 1) {
-			polygonVertices.Add(windowVertices[sunRaysIndex[1]]);
- 		}*/
-		/*if(finishTurn) {
-			Debug.Log("vertices " + polygonVertices.Count + " endIndex " + endIndex + " initial Index " + initialIndex );
-			for(int k = 0; k != initialIndex;) {
-				polygonVertices.Add(windowVertices[k]);
-				k--;
-				if(k<0) {
-					k=windowVertices.Length - 1;
-				}
-			}
+		Debug.Log("**********");*/
 
-			Debug.Log("end vertices " + polygonVertices.Count);
-		}*/
+
 	}
 }
