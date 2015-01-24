@@ -18,7 +18,8 @@ public class SceneInputHandler : MonoBehaviour, IInputHandler
 			Transform t = target.transform.FindChild("WalkAnchor");
 			if (t == null)
 				t = target.transform;
-			player.WalkToPosition(t.position);
+
+			player.WalkToPosition(t.position, target.gameObject);
 		}
 	}
 	public void HandleInputUpdate (Vector2 position, int fingerId = -1)
