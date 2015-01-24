@@ -57,7 +57,9 @@ SubShader {
                     } else {
                     	fragColor = diffuseTex/2;// / (1,1,1,1); //half4(1,0,0,0.5);//diffuseTex;
                     }
-                    return fragColor;
+                    
+                    
+                   return fragColor;
                 }
             ENDCG 
         }
