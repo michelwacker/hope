@@ -54,9 +54,10 @@ SubShader {
                     half4 fragColor;
                     if(volumetricLight.a > 0.1) {
                     	if(lightMapTex.a > 0) {
-                    		fragColor = diffuseTex/2 + half4(0.3,0.2,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
-                    	} else {
+                    		//fragColor = diffuseTex/2 + half4(0.4,0.4,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
                     		fragColor = diffuseTex/2 + half4(0.1,0.1,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
+                    	} else {
+                    		fragColor = diffuseTex/4 + half4(0.1,0.1,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
                     	}
                     } else {
                     	fragColor = diffuseTex/4;// / (1,1,1,1); //half4(1,0,0,0.5);//diffuseTex;
