@@ -17,10 +17,6 @@ public class InputCheck : MonoBehaviour
 		{
 			_inputHandler = (IInputHandler) inputHandler;
 		}
-		else
-		{
-			Debug.LogError("No or invalid IInputHandler passed to InputCheck!");
-		}
 	}
 	
 	// Update is called once per frame
