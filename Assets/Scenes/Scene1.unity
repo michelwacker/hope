@@ -1747,7 +1747,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
 --- !u!114 &1080811522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,7 +2043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1634120395
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2218,7 +2218,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1854843169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .769999981, y: .119999997, z: 0}
+  m_LocalPosition: {x: 1.65999997, y: -.0299999993, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 353313757}
@@ -2459,6 +2459,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2054953446}
+  - 114: {fileID: 2054953447}
   m_Layer: 0
   m_Name: Scene
   m_TagString: Untagged
@@ -2487,6 +2488,17 @@ Transform:
   - {fileID: 353313757}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &2054953447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2054953445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88254a40178294354a2f331981a82b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2075953578
 GameObject:
   m_ObjectHideFlags: 0
