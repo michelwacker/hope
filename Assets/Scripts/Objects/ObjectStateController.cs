@@ -7,10 +7,6 @@ public class ObjectStateController : MonoBehaviour, IUseInteraction, IBreakInter
 	void Awake()
 	{
 		anim = GetComponent<Animator> ();
-		if (anim == null)
-		{
-			Debug.LogError("No animator found in " + name + "! Must be added to set states on interaction.");
-		}
 	}
 	#region IBreakInteraction implementation
 
