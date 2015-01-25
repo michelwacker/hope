@@ -13,6 +13,9 @@ public class SceneInputHandler : MonoBehaviour, IInputHandler
 	#region IInputHandler implementation
 	public void HandleInputDown (Collider2D target, int fingerId = -1)
 	{
+		if (SceneManager.isGameOver ())
+			return;
+
 		if (player != null)
 		{
 			Transform t = target.transform.FindChild("WalkAnchor");

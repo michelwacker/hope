@@ -64,6 +64,8 @@ public class SceneManager : MonoBehaviour
 	void HandleWalkComplete (GameObject gameObject)
 	{
 //		Debug.Log ("HandleWalkComplete");
+		if (gameObject == null)
+						return;
 		ObjectInteraction oi = gameObject.GetComponent<ObjectInteraction> ();
 
 		float diff = oi.transform.position.x - player.transform.position.x;
