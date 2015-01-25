@@ -12,6 +12,37 @@ public class SceneManager : MonoBehaviour
 		return gameOver;
 	}
 
+	public static void GameComplete()
+	{
+		gameOver = true;
+
+		if (!instance.hasEnded)
+			instance.EndGame ();
+	}
+	private static SceneManager instance;
+	public bool hasEnded;
+	void Awake()
+	{
+		instance = this;
+		hasEnded = false;
+	}
+
+	public void EndGame()
+	{
+		hasEnded = true;
+
+		StartCoroutine (WaitForGameEnd);
+	}
+	private IEnumerator WaitForGameEnd()
+	{
+		yield return new WaitForSeconds (3f);
+
+		GameEnd ();
+	}
+	private void GameEnd()
+	{
+		// TODO end the game here!!
+	}
 	void OnEnable()
 	{
 		Player.WalkBegin += HandleWalkBegin;
