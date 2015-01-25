@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SceneManager : MonoBehaviour
@@ -6,9 +6,10 @@ public class SceneManager : MonoBehaviour
 	public Player player;
 	public InteractionMenuManager interactionMenuManager;
 
-	public static void GameComplete()
-	{
+	private static bool gameOver = false;
 
+	public static bool isGameOver() {
+		return gameOver;
 	}
 
 	void OnEnable()
