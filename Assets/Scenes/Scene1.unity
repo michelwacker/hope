@@ -1804,7 +1804,7 @@ GameObject:
   - 4: {fileID: 687341828}
   - 114: {fileID: 687341827}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DayNightController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1822,12 +1822,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 674032390}
-  NightBeginColor: {r: 0, g: 0, b: 0, a: 0}
-  NightMiddleColor: {r: 0, g: 0, b: 0, a: 0}
-  NightEndColor: {r: 0, g: 0, b: 0, a: 0}
-  DayBeginColor: {r: 0, g: 0, b: 0, a: 0}
-  DayMiddleColor: {r: 0, g: 0, b: 0, a: 0}
-  DayEndColor: {r: 0, g: 0, b: 0, a: 0}
+  NightBeginColor: {r: .996078432, g: 1, b: .945098042, a: 0}
+  NightMiddleColor: {r: 0, g: 0, b: 1, a: 0}
+  NightEndColor: {r: .690196097, g: .698039234, b: .870588243, a: 0}
+  DayBeginColor: {r: .690196097, g: .698039234, b: .870588243, a: 0}
+  DayMiddleColor: {r: 1, g: .874509811, b: 0, a: 0}
+  DayEndColor: {r: .996078432, g: 1, b: .945098042, a: 0}
 --- !u!4 &687341828
 Transform:
   m_ObjectHideFlags: 0
