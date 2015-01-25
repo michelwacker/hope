@@ -689,7 +689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e7585049f224e768e74ffd02660c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: .100000001
+  speedFactor: .5
   moveDelay: .200000003
   verticalScaleFactor: .200000003
   walkingSound: {fileID: 8300000, guid: c3e3b2f65384e4a72b7fd785d462c96f, type: 3}
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output: What... what are you?     A friend?    Yes, a friend... finally.
+  output: What... what are you? Are friend? ... Yes, a friend. So, what do we do now?
 --- !u!82 &486024258
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5093,7 +5093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output: Hey there, little friend? Looking for company?
+  output: Hey there, little friend? Looking for company? So, what do we do now?
 --- !u!114 &1705404160
 MonoBehaviour:
   m_ObjectHideFlags: 0
