@@ -35,7 +35,7 @@ SubShader {
                 float4 _InsanityVector;
                 float4 _InsanityVector2;
                 int _Day;
-                float _DayRatio;
+                int _GameOver;
            
                 struct v2f {
                     float4 pos : SV_POSITION;
@@ -59,19 +59,23 @@ SubShader {
                     //half4 lightMapTex = tex2D (_Lightmap, IN.uv);
                     half4 sceneMapTex = tex2D (_Scenemap, IN.uv);
                     half4 fragColor;
-                    if(sceneMapTex.a == 0) {
-	                    if(volumetricLight.a > 0.1 && _Day == 1) {
-	                    	//if(lightMapTex.a > 0) {
-	                    		//fragColor = diffuseTex * _LightColor ;
-	                    	//} else {
-	                    		//fragColor = diffuseTex * _LightColor/2;
-	                    	//}
-	                    	fragColor = diffuseTex * _LightColor;
-	                    } else {
-	                    	fragColor = diffuseTex * _AmbientColor;
-	                    }
-	               	} else {
-	               		fragColor = diffuseTex;
+                    if(_GameOver == 1) {
+                    	fragColor = diffuseTex;
+                    } else {
+                    	if(sceneMapTex.a == 0) {
+		                    if(volumetricLight.a > 0.1 && _Day == 1) {
+		                    	//if(lightMapTex.a > 0) {
+		                    		//fragColor = diffuseTex * _LightColor ;
+		                    	//} else {
+		                    		//fragColor = diffuseTex * _LightColor/2;
+		                    	//}
+		                    	fragColor = diffuseTex * _LightColor;
+		                    } else {
+		                    	fragColor = diffuseTex * _AmbientColor;
+		                    }
+		               	} else {
+		               		fragColor = diffuseTex;
+		               	}
 	               	}
                     
                    return fragColor;

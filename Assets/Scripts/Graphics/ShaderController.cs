@@ -25,7 +25,9 @@ public class ShaderController : MonoBehaviour {
 		setShaderAmbientColor();
 		setLightAmbientColor();
 		int day = (DayNightController.isDay()) ? 1 : 0;
+		int gameOver = (false) ? 1 : 0;
 		shaderMaterial.SetInt("_Day", day);
+		shaderMaterial.SetInt("_GameOver", gameOver);
 		shaderMaterial.SetFloat("_DayRatio", DayNightController.getDayRatio());
 		//shaderMaterial.SetVector("_InsanityVector", new Vector4(Random.Range(-0.02f, 0.02f), Random.Range(-0.02f, 0.02f), 0,0 ));
 		//shaderMaterial.SetVector("_InsanityVector2", new Vector4(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f), 0,0 ));
