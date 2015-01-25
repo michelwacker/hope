@@ -25,6 +25,9 @@ public class SceneManager : MonoBehaviour
 	void HandleWalkComplete (GameObject gameObject)
 	{
 		Debug.Log ("HandleWalkComplete");
-		interactionMenuManager.ShowMenu (gameObject);
+		ObjectInteraction oi = gameObject.GetComponent<ObjectInteraction> ();
+
+		if (oi == null || !oi.isBroken)
+			interactionMenuManager.ShowMenu (gameObject);
 	}
 }

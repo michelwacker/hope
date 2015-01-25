@@ -11,6 +11,13 @@ public class Player : MonoBehaviour
 	{
 		instance.madness += madness;
 	}
+	public static int currentMadness
+	{
+		get
+		{
+			return instance.madness;
+		}
+	}
 
 	private static Player instance;
 
