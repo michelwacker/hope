@@ -1117,7 +1117,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1265892883}
-  - 114: {fileID: 1265892885}
   - 114: {fileID: 1265892884}
   m_Layer: 0
   m_Name: SceneManager
@@ -1149,21 +1148,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d4829aaf6444eff9fff0a545f1b5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1265892885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1265892882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc12ab5c6f034301b7e735ed1357797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allowMultitouch: 0
-  blockAfterSelection: 1
-  allowDrag: 0
-  inputHandler: {fileID: 1265892884}
 --- !u!1001 &1288365247
 Prefab:
   m_ObjectHideFlags: 0
