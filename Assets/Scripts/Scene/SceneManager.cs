@@ -56,12 +56,12 @@ public class SceneManager : MonoBehaviour
 	}
 	void HandleWalkBegin (GameObject gameObject)
 	{
-		Debug.Log ("HandleWalkBegin");
+//		Debug.Log ("HandleWalkBegin");
 		interactionMenuManager.HideMenu ();
 	}
 	void HandleWalkComplete (GameObject gameObject)
 	{
-		Debug.Log ("HandleWalkComplete");
+//		Debug.Log ("HandleWalkComplete");
 		ObjectInteraction oi = gameObject.GetComponent<ObjectInteraction> ();
 
 		float diff = oi.transform.position.x - player.transform.position.x;
