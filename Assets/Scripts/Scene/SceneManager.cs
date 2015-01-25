@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SceneManager : MonoBehaviour
 {
-
+	public Player player;
 	public InteractionMenuManager interactionMenuManager;
 
 	void OnEnable()
@@ -26,6 +26,11 @@ public class SceneManager : MonoBehaviour
 	{
 		Debug.Log ("HandleWalkComplete");
 		ObjectInteraction oi = gameObject.GetComponent<ObjectInteraction> ();
+
+		float diff = oi.transform.position.x - player.transform.position.x;
+		if (diff > 0 && !player.facingRight || diff < 0 && player.facingRight)
+			player.Flip ();
+
 
 		if (oi == null || !oi.isBroken || oi.interactWhenBroken)
 			interactionMenuManager.ShowMenu (gameObject);

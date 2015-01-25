@@ -3017,6 +3017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5469b0efcd03b44a78aaf1cf305d9789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 269917195}
   interactionMenuManager: {fileID: 1080811522}
 --- !u!1001 &1288365247
 Prefab:

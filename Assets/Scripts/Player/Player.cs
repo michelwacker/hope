@@ -205,7 +205,7 @@ public class Player : MonoBehaviour
 		StopWalking ();
 	}
 
-	void Flip()
+	public void Flip()
 	{
 		// invert graphics scale
 		Vector3 theScale = transform.localScale;
