@@ -6,6 +6,12 @@ public class SceneManager : MonoBehaviour
 	public Player player;
 	public InteractionMenuManager interactionMenuManager;
 
+	private static bool gameOver = false;
+
+	public static bool isGameOver() {
+		return gameOver;
+	}
+
 	void OnEnable()
 	{
 		Player.WalkBegin += HandleWalkBegin;

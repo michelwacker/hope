@@ -25,7 +25,7 @@ public class ShaderController : MonoBehaviour {
 		setShaderAmbientColor();
 		setLightAmbientColor();
 		int day = (DayNightController.isDay()) ? 1 : 0;
-		int gameOver = (false) ? 1 : 0;
+		int gameOver = (SceneManager.isGameOver()) ? 1 : 0;
 		shaderMaterial.SetInt("_Day", day);
 		shaderMaterial.SetInt("_GameOver", gameOver);
 		shaderMaterial.SetFloat("_DayRatio", DayNightController.getDayRatio());
