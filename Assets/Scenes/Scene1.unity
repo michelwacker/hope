@@ -3172,7 +3172,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: cc0a414a9a50744178c9410606e5d407, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &957482189
 Transform:
   m_ObjectHideFlags: 0
@@ -3184,7 +3184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!114 &957482190
 MonoBehaviour:
   m_ObjectHideFlags: 0
