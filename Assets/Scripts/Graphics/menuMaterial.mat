@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: sceneMaterial
-  m_Shader: {fileID: 4800000, guid: 00c2911e3f20c4f0383eedc1a20d2464, type: 3}
+  m_Name: menuMaterial
+  m_Shader: {fileID: 4800000, guid: 20c8021cd8d674583a4aa16df45c04ea, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -45,7 +45,7 @@ Material:
         first:
           name: _Scenemap
         second:
-          m_Texture: {fileID: 2800000, guid: b53f7f0a90ba845d48147f6e6548334a, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}

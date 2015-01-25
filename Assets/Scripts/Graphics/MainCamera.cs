@@ -8,7 +8,6 @@ public class MainCamera : MonoBehaviour {
 
 	void OnRenderImage (RenderTexture source, RenderTexture destination){
 		Graphics.Blit(source, intermediateRT, material);
-		intermediateRT.DiscardContents();
 		Graphics.Blit(intermediateRT, destination);
 	}
 }

@@ -1,10 +1,6 @@
-﻿Shader "Hope/sceneShader" {
+﻿Shader "Hope/menuShader" {
 	Properties {
 	   _MainTex ("MainTex", 2D) = "Diffuse" {}
-	   _VolumetricLight ("VolumetricLight", 2D) = "Bump1" {}
-	   _Lightmap ("Lightmap", 2D) = "Bump2" {}
-	   _AmbientColor ("AmbientColor", Color) = (0.1,0.8,0.1,1)
-	   _LightColor ("LightColor", Color) = (0.1,0.8,0.1,1)
 	}
 
 
@@ -65,28 +61,16 @@ SubShader {
                     half4 diffuseTex2 = tex2D (_MainTex, uv2);
                     half4 diffuseTex3 = tex2D (_MainTex, uv3);
 
-                                        half4 volumetricLight = tex2D (_VolumetricLight, IN.uv);
-                    half4 lightMapTex = tex2D (_Lightmap, IN.uv);
-                    half4 fragColor;
                     diffuseTex2.a = 0.3f;
                     diffuseTex2.b = 1.0f;
                     diffuseTex3.a = 0.3f;
                     diffuseTex3.r = 1.0f;
                     diffuseTex *= diffuseTex2 * diffuseTex3;
-                    if(volumetricLight.a > 0.1) {
-                    	if(lightMapTex.a > 0) {
-                    		//fragColor = diffuseTex/2 + half4(0.4,0.4,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.5);
-                    		fragColor = ((diffuseTex/2) ) * _LightColor;//diffuseTex + half4(0.5,0.5,0.5,0.5);
-                    	} else {
-                    		fragColor = ((diffuseTex/4) ) * _LightColor;//diffuseTex + half4(0.5,0.5,0.5,0.5);
-                    	}
-                    } else {
-                    	fragColor = ((diffuseTex/4) );// / (1,1,1,1); //half4(1,0,0,0.5);//diffuseTex;
-                    }
+                    
                     
                     
                    //return diffuseTex + volumetricLight;
-                   return fragColor;
+                   return diffuseTex;
                 }
             ENDCG 
         }
