@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Sun : MonoBehaviour {
 
+	public GameObject beginPosition;
+	public GameObject endPosition;
+
+
 	// Use this for initialization
 	void Start () {
 
@@ -10,9 +14,9 @@ public class Sun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 pos = transform.position;
-		pos.x += Time.deltaTime ;
-		transform.position = pos;
+		if(DayNightController.isDay()) {
+			gameObject.transform.position = Vector3.Lerp(beginPosition.transform.position, endPosition.transform.position, DayNightController.getDayRatio());
+		}
 		
 	}
 }

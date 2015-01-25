@@ -49,8 +49,7 @@ public class LightPolygon : MonoBehaviour {
 		msh.vertices = vertices;
 		msh.triangles = indices;
 		msh.RecalculateNormals();
-		msh.RecalculateBounds();
-		
+		msh.RecalculateBounds();	
 	}
 
 	private void createRayCasts() {
@@ -83,10 +82,12 @@ public class LightPolygon : MonoBehaviour {
 			}
 		}
 
-		for(int i=0; i <= sunRaysIndex[0]; i++) {
+		/*for(int i=0; i <= sunRaysIndex[0]; i++) {
+			polygonVertices.Add(windowVertices[i]);
+		}*/
+		for(int i=sunRaysIndex[1]; i >= sunRaysIndex[0]; i--) {
 			polygonVertices.Add(windowVertices[i]);
 		}
-
 
 		Wall wall = null;
 
@@ -108,9 +109,9 @@ public class LightPolygon : MonoBehaviour {
 			polygonVertices.Add(hit.point);
 		}
 
-		for(int i = sunRaysIndex[1]; i<=3; i++) {
+		/*for(int i = sunRaysIndex[1]; i<=3; i++) {
 			polygonVertices.Add(windowVertices[i]);
-		}
+		}*/
 
 	}
 }
