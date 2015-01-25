@@ -31,7 +31,7 @@ public class SceneManager : MonoBehaviour
 	{
 		hasEnded = true;
 
-		StartCoroutine (WaitForGameEnd);
+		StartCoroutine (WaitForGameEnd());
 	}
 	private IEnumerator WaitForGameEnd()
 	{
