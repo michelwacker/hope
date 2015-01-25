@@ -6,6 +6,8 @@ public class SceneManager : MonoBehaviour
 	public Player player;
 	public InteractionMenuManager interactionMenuManager;
 
+	public EndScreen endScreen;
+
 	private static bool gameOver = false;
 
 	public static bool isGameOver() {
@@ -41,7 +43,7 @@ public class SceneManager : MonoBehaviour
 	}
 	private void GameEnd()
 	{
-		// TODO end the game here!!
+		endScreen.Fadeout ();
 	}
 	void OnEnable()
 	{

@@ -564,7 +564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &241022140
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ Transform:
   m_Children:
   - {fileID: 1009844555}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!114 &269917195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ Transform:
   - {fileID: 2075953579}
   - {fileID: 1854843170}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!61 &353313758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1198,7 +1198,7 @@ Transform:
   - {fileID: 675173057}
   - {fileID: 1365317904}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!60 &428572052
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1372,7 +1372,7 @@ Transform:
   - {fileID: 601853}
   - {fileID: 1050995960}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!212 &484755871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1632,7 +1632,7 @@ Transform:
   - {fileID: 1911869504}
   - {fileID: 755565051}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!95 &486024249
 Animator:
   serializedVersion: 3
@@ -1828,7 +1828,7 @@ Transform:
   - {fileID: 1223464322}
   - {fileID: 996544495}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!95 &554106942
 Animator:
   serializedVersion: 3
@@ -2751,7 +2751,7 @@ Transform:
   - {fileID: 1034424226}
   - {fileID: 524046690}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!60 &902137861
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3090,13 +3090,14 @@ GameObject:
   - 4: {fileID: 957482189}
   - 212: {fileID: 957482188}
   - 114: {fileID: 957482190}
+  - 61: {fileID: 957482191}
   m_Layer: 0
   m_Name: endScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &957482188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3129,8 +3130,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 2054953446}
+  m_RootOrder: 0
 --- !u!114 &957482190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,6 +3143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2225935bb180b41d9a5d28509d605c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &957482191
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957482187}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1, y: 1}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &969749558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,6 +3854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 269917195}
   interactionMenuManager: {fileID: 1080811522}
+  endScreen: {fileID: 957482190}
   hasEnded: 0
 --- !u!1001 &1288365247
 Prefab:
@@ -4458,7 +4471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &1634120397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4638,7 +4651,7 @@ Transform:
   - {fileID: 1261299959}
   - {fileID: 377255768}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!212 &1705404155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4895,7 +4908,7 @@ Transform:
   - {fileID: 1205897771}
   - {fileID: 1717107563}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!61 &1738852564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5562,7 +5575,7 @@ Transform:
   - {fileID: 304672000}
   - {fileID: 969749559}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!212 &2045684869
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5861,6 +5874,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 957482189}
   - {fileID: 2140227616}
   - {fileID: 1738852563}
   - {fileID: 2045684868}
@@ -5963,7 +5977,7 @@ Transform:
   - {fileID: 738153317}
   - {fileID: 2134266542}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!212 &2117098110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6321,7 +6335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &2140227617
 MonoBehaviour:
   m_ObjectHideFlags: 0
