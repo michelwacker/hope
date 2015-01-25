@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 81212024}
   m_Layer: 0
-  m_Name: end
+  m_Name: sunEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1154,6 +1154,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 902137860}
   m_RootOrder: 1
+--- !u!1 &540263355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 540263356}
+  m_Layer: 0
+  m_Name: sunBeginWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &540263356
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 540263355}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.17000008, y: 5.53999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
 --- !u!1 &554106940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,12 +1849,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 674032390}
-  NightBeginColor: {r: .996078432, g: 1, b: .945098042, a: 0}
-  NightMiddleColor: {r: 0, g: 0, b: 1, a: 0}
-  NightEndColor: {r: .690196097, g: .698039234, b: .870588243, a: 0}
-  DayBeginColor: {r: .690196097, g: .698039234, b: .870588243, a: 0}
-  DayMiddleColor: {r: 1, g: .874509811, b: 0, a: 0}
-  DayEndColor: {r: .996078432, g: 1, b: .945098042, a: 0}
+  NightBeginColor: {r: .383001715, g: .506461024, b: .676470578, a: 1}
+  NightMiddleColor: {r: .134948075, g: .135650426, b: .286764681, a: 1}
+  NightEndColor: {r: .668252587, g: .70899564, b: .757352948, a: 1}
+  DayBeginColor: {r: .668252587, g: .70899564, b: .757352948, a: 1}
+  DayMiddleColor: {r: .679930806, g: .857728839, b: .963235319, a: 1}
+  DayEndColor: {r: .383001715, g: .506461024, b: .676470578, a: 1}
 --- !u!4 &687341828
 Transform:
   m_ObjectHideFlags: 0
@@ -3618,7 +3645,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1608977070}
   m_Layer: 0
-  m_Name: begin
+  m_Name: sunBegin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4261,6 +4288,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1080811518}
   m_RootOrder: 1
+--- !u!1 &1969798960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1969798961}
+  m_Layer: 0
+  m_Name: sunEndWindow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1969798961
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969798960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.93000007, y: 5.53999996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
 --- !u!1 &1980524560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4317,6 +4371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beginPosition: {fileID: 1608977069}
+  firstWindowMark: {fileID: 540263355}
+  secondWindowMark: {fileID: 1969798960}
   endPosition: {fileID: 81212023}
 --- !u!4 &1989979605
 Transform:
