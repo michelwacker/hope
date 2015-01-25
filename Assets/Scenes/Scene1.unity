@@ -3709,6 +3709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 269917195}
   interactionMenuManager: {fileID: 1080811522}
+  hasEnded: 0
 --- !u!1001 &1288365247
 Prefab:
   m_ObjectHideFlags: 0
@@ -5364,8 +5365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beginPosition: {fileID: 1608977069}
-  firstWindowMark: {fileID: 540263355}
-  secondWindowMark: {fileID: 1969798960}
+  firstWindowMark: {fileID: 0}
+  secondWindowMark: {fileID: 0}
   endPosition: {fileID: 81212023}
 --- !u!4 &1989979605
 Transform:
