@@ -230,7 +230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 81212023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.4000001, y: 4.11000013, z: 0}
+  m_LocalPosition: {x: 8.14000034, y: 4.11000013, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2996,7 +2996,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1608977069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1500001, y: 5.53999996, z: 0}
+  m_LocalPosition: {x: -8.52999973, y: 5.53999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3144,6 +3144,55 @@ Prefab:
   m_RootGameObject: {fileID: 332428848}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1678572160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1678572162}
+  - 114: {fileID: 1678572161}
+  m_Layer: 0
+  m_Name: shaderController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678572161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678572160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea26e309eaec24c20aa337cf5685282d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shaderMaterial: {fileID: 2100000, guid: e955e89478cf34e7f8a2e9e24ecc3988, type: 2}
+  AmbientNightBeginColor: {r: .524437666, g: .588238239, b: .713235259, a: 1}
+  AmbientNightMiddleColor: {r: .400951594, g: .460309058, b: .529411793, a: 1}
+  AmbientNightEndColor: {r: .713235259, g: .713235259, b: .713235259, a: 1}
+  AmbientDayBeginColor: {r: .713235259, g: .713235259, b: .713235259, a: 1}
+  AmbientDayMiddleColor: {r: .911764681, g: .911764681, b: .911764681, a: 1}
+  AmbientDayEndColor: {r: .524437666, g: .588238239, b: .713235259, a: 1}
+  LightDayBeginColor: {r: .926246881, g: .933823526, b: .796496511, a: 1}
+  LightDayMiddleColor: {r: 1, g: 1, b: 1, a: 1}
+  LightDayEndColor: {r: .695826113, g: .69696039, b: .860294104, a: 1}
+--- !u!4 &1678572162
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678572160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
 --- !u!1 &1738852561
 GameObject:
   m_ObjectHideFlags: 0
