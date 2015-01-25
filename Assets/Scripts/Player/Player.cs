@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
 	private void StopWalking()
 	{
 		StopCoroutine (WaitDrawing());
-		iTween.Stop ();
+//		iTween.Stop ();
 		
 		SetState ("Walk", false);
 
