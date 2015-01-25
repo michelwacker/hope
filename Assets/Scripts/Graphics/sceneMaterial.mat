@@ -53,7 +53,7 @@ Material:
       data:
         first:
           name: _LightColor
-        second: {r: .524905324, g: .588589013, b: .713543534, a: 1}
+        second: {r: .78721112, g: .78721112, b: .78721112, a: 1}
       data:
         first:
           name: _Color
@@ -61,4 +61,4 @@ Material:
       data:
         first:
           name: _AmbientColor
-        second: {r: .47668013, g: .538762391, b: .642142594, a: 1}
+        second: {r: .741251945, g: .741251945, b: .741251945, a: 1}
