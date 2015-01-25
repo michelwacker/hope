@@ -35,6 +35,7 @@ SubShader {
                 float4 _InsanityVector;
                 float4 _InsanityVector2;
                 int _Day;
+                float _DayRatio;
            
                 struct v2f {
                     float4 pos : SV_POSITION;
@@ -54,24 +55,20 @@ SubShader {
            
                 float4 frag(v2f IN) : COLOR {
                     half4 diffuseTex = tex2D (_MainTex, IN.uv);
-                    half2 uv2 = IN.uv;
-                    half2 uv3 = IN.uv;
-
 					half4 volumetricLight = tex2D (_VolumetricLight, IN.uv);
-                    half4 lightMapTex = tex2D (_Lightmap, IN.uv);
+                    //half4 lightMapTex = tex2D (_Lightmap, IN.uv);
                     half4 sceneMapTex = tex2D (_Scenemap, IN.uv);
                     half4 fragColor;
                     if(sceneMapTex.a == 0) {
 	                    if(volumetricLight.a > 0.1 && _Day == 1) {
-	                    	//fragColor = diffuseTex * _LightColor;
-	                    	if(lightMapTex.a > 0) {
-	                    		//fragColor = diffuseTex/2 + half4(0.4,0.4,0,1f);//diffuseTex + half4(0.5,0.5,0.5,0.	
-	                    		fragColor = diffuseTex * _LightColor;//diffuseTex + half4(0.5,0.5,0.5,0.5);
-	                    	} else {
-	                    		fragColor = diffuseTex * _LightColor;//diffuseTex + half4(0.5,0.5,0.5,0.5);
-	                    	}
+	                    	//if(lightMapTex.a > 0) {
+	                    		//fragColor = diffuseTex * _LightColor ;
+	                    	//} else {
+	                    		//fragColor = diffuseTex * _LightColor/2;
+	                    	//}
+	                    	fragColor = diffuseTex * _LightColor;
 	                    } else {
-	                    	fragColor = diffuseTex * _AmbientColor; // / (1,1,1,1); //half4(1,0,0,0.5);//diffuseTex;
+	                    	fragColor = diffuseTex * _AmbientColor;
 	                    }
 	               	} else {
 	               		fragColor = diffuseTex;
@@ -79,6 +76,7 @@ SubShader {
                     
                    return fragColor;
                 }
+                
             ENDCG 
         }
      

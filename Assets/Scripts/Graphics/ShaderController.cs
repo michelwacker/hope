@@ -17,10 +17,16 @@ public class ShaderController : MonoBehaviour {
 	public Color LightDayMiddleColor;
 	public Color LightDayEndColor;
 
+	private Color currentAmbientColor = new Color();
+	private Color currentLightColor = new Color();
+
 	void Update() {
 
 		setShaderAmbientColor();
 		setLightAmbientColor();
+		int day = (DayNightController.isDay()) ? 1 : 0;
+		shaderMaterial.SetInt("_Day", day);
+		shaderMaterial.SetFloat("_DayRatio", DayNightController.getDayRatio());
 		//shaderMaterial.SetVector("_InsanityVector", new Vector4(Random.Range(-0.02f, 0.02f), Random.Range(-0.02f, 0.02f), 0,0 ));
 		//shaderMaterial.SetVector("_InsanityVector2", new Vector4(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f), 0,0 ));
 	}
@@ -41,20 +47,23 @@ public class ShaderController : MonoBehaviour {
 			middle = AmbientNightMiddleColor;
 			end = AmbientNightEndColor;
 		}
-		Color c;
+
 		if (dayRatio < 0.5f) {
-			c = new Color (MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r), 
-			               MathHelper.Map (dayRatio, 0, 0.5f, begin.g, middle.g), 
-			               MathHelper.Map (dayRatio, 0, 0.5f, begin.b, middle.b), 1);
+			currentAmbientColor.r = MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r);
+			currentAmbientColor.g = MathHelper.Map (dayRatio, 0, 0.5f, begin.g, middle.g);
+			currentAmbientColor.b = MathHelper.Map (dayRatio, 0, 0.5f, begin.b, middle.b);
+			currentAmbientColor.a = 1;
+			               
 		}
 		else {
-			c = new Color (MathHelper.Map (dayRatio, 0.5f, 1, middle.r, end.r), 
-			               MathHelper.Map (dayRatio, 0.5f, 1, middle.g, end.g), 
-			               MathHelper.Map (dayRatio, 0.5f, 1, middle.b, end.b), 1);
+			currentAmbientColor.r = MathHelper.Map (dayRatio, 0.5f, 1, middle.r, end.r);
+			currentAmbientColor.g = MathHelper.Map (dayRatio, 0.5f, 1, middle.g, end.g);
+			currentAmbientColor.b = MathHelper.Map (dayRatio, 0.5f, 1, middle.b, end.b);
+			currentAmbientColor.a = 1;
+			               
 		}
-		shaderMaterial.SetColor("_AmbientColor", c);
-		int day = (DayNightController.isDay()) ? 1 : 0;
-		shaderMaterial.SetInt("_Day", day);
+		shaderMaterial.SetColor("_AmbientColor", currentAmbientColor);
+
 	}
 
 	private void setLightAmbientColor ()
@@ -69,24 +78,22 @@ public class ShaderController : MonoBehaviour {
 			middle = LightDayMiddleColor;
 			end = LightDayEndColor;
 		
-			Color c;
 			if (dayRatio < 0.5f) {
-				c = new Color (MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r), 
-				               MathHelper.Map (dayRatio, 0, 0.5f, begin.g, middle.g), 
-				               MathHelper.Map (dayRatio, 0, 0.5f, begin.b, middle.b), 1);
+				currentLightColor.r = MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r);
+				currentLightColor.g = MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r);
+				currentLightColor.b = MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r);
+				currentLightColor.a = 1;
 			}
 			else {
-				c = new Color (MathHelper.Map (dayRatio, 0.5f, 1, middle.r, end.r), 
-				               MathHelper.Map (dayRatio, 0.5f, 1, middle.g, end.g), 
-				               MathHelper.Map (dayRatio, 0.5f, 1, middle.b, end.b), 1);
+				currentLightColor.r = MathHelper.Map (dayRatio, 0.5f, 1, middle.r, end.r);
+				currentLightColor.g = MathHelper.Map (dayRatio, 0.5f, 1, middle.g, end.g);
+				currentLightColor.b = MathHelper.Map (dayRatio, 0.5f, 1, middle.b, end.b);
+				currentLightColor.a = 1;
 			}
 
-			shaderMaterial.SetColor("_LightColor", c);
-
+			shaderMaterial.SetColor("_LightColor", currentLightColor);
 		}
 
-
-		
 	}
 
 }
