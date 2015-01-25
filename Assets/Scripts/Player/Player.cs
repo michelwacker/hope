@@ -90,6 +90,20 @@ public class Player : MonoBehaviour
 		initY = transform.position.y;
 	}
 
+	void OnEnable()
+	{
+		DayNightController.DayBegin += HandleDayBegin;
+	}
+	void OnDisable()
+	{
+		DayNightController.DayBegin -= HandleDayBegin;
+	}
+
+	void HandleDayBegin ()
+	{
+		Player.AddMadness (2);
+	}
+
 //	public void Read()
 //	{
 //		SetState ("Read", true);
