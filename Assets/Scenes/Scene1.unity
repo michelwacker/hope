@@ -1149,7 +1149,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 524046689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: -1.51999998, z: 0}
+  m_LocalPosition: {x: -.0999999046, y: -1.1099999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 902137860}
@@ -2022,6 +2022,13 @@ GameObject:
   - 114: {fileID: 902137865}
   - 114: {fileID: 902137864}
   - 114: {fileID: 902137862}
+  - 114: {fileID: 902137868}
+  - 114: {fileID: 902137867}
+  - 114: {fileID: 902137866}
+  - 114: {fileID: 902137871}
+  - 114: {fileID: 902137870}
+  - 114: {fileID: 902137869}
+  - 114: {fileID: 902137872}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -2286,6 +2293,8 @@ MonoBehaviour:
   interactWhenBroken: 1
   interactions:
   - {fileID: 902137862}
+  - {fileID: 902137868}
+  - {fileID: 902137871}
 --- !u!114 &902137865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2297,6 +2306,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d6ed975d140448e999c9fa26118976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &902137866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ce36f0ff0d4e5bb2da6c98e3e0b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  madness: -1
+--- !u!114 &902137867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60e5402b7a5e48d6b7735c971eba805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 269917197}
+  state: Sleep
+--- !u!114 &902137868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd35ddd0ffdd42b3b1e685d049ab3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  moment: 0
+  actions:
+  - {fileID: 902137867}
+  - {fileID: 902137866}
+  - {fileID: 902137872}
+--- !u!114 &902137869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ce36f0ff0d4e5bb2da6c98e3e0b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  madness: 1
+--- !u!114 &902137870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: AAAAARGH!!
+--- !u!114 &902137871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f381da8d25f4a4167b871347c543b86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 1
+  moment: 2
+  actions:
+  - {fileID: 902137870}
+  - {fileID: 902137869}
+--- !u!114 &902137872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 902137858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: zzzZZZzzzZZZzzz
 --- !u!1 &969749558
 GameObject:
   m_ObjectHideFlags: 0
