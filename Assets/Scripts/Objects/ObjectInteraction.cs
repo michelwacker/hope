@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ObjectInteraction : MonoBehaviour
 {
+	public bool interactWhenBroken;
 	public MonoBehaviour[] interactions;
 
 	public bool isBroken

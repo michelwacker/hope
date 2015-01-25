@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 	public static void AddMadness(int madness)
 	{
 		instance.madness += madness;
+		Debug.Log("Player madness is " + instance.madness);
 	}
 	public static int currentMadness
 	{
@@ -28,6 +29,8 @@ public class Player : MonoBehaviour
 
 	public AudioClip walkingSound;
 
+	public GameObject book;
+
 	private AudioSource source;
 	private float initY;
 	private GameObject currentTarget;
@@ -44,6 +47,8 @@ public class Player : MonoBehaviour
 
 	private Transform walkAnchor;
 	private Vector3 anchorDist;
+
+	private Animator anim;
 	
 	// Use this for initialization
 	void Awake ()
@@ -66,7 +71,39 @@ public class Player : MonoBehaviour
 			Debug.LogError("No audio source in player found!");
 		}
 
+		anim = GetComponent<Animator> ();
+
 		initY = transform.position.y;
+	}
+
+//	public void Read()
+//	{
+//		SetState ("Read", true);
+//	}
+//	public void Look()
+//	{
+//		SetState ("Look", true);
+//	}
+//	public void Crouch()
+//	{
+//		SetState ("Crouch", true);
+//	}
+//	public void ShowBack()
+//	{
+//		SetState ("ShowBack", true);
+//	}
+	public void Draw()
+	{
+		SetState ("Draw", true);
+
+		StartCoroutine (WaitDrawing());
+	}
+
+	private IEnumerator WaitDrawing()
+	{
+		yield return new WaitForSeconds (2f);
+
+		SetState ("Draw", false);
 	}
 
 	public void WalkToPosition(Vector3 position, GameObject gameObject)
@@ -92,10 +129,21 @@ public class Player : MonoBehaviour
 
 	private IEnumerator StartWalking(Vector3 p, float delay)
 	{
+		SetState ("Read", false);
+		SetState ("Sleep", false);
+		SetState ("Look", false);
+		SetState ("Draw", false);
+		SetState ("Crouch", false);
+		SetState ("ShowBack", false);
+		if (book != null)
+		{
+			book.SetActive(true);
+		}
+
 		if (delay > 0f)
 			yield return new WaitForSeconds (delay);
 
-		// TODO set animation
+		SetState ("Walk", true);
 		
 		if (source != null)
 		{
@@ -117,8 +165,11 @@ public class Player : MonoBehaviour
 
 	private void StopWalking()
 	{
+		StopCoroutine (WaitDrawing());
 		iTween.Stop ();
-		// TODO set animation
+		
+		SetState ("Walk", false);
+
 		if (source != null)
 		{
 			source.Stop ();
@@ -153,5 +204,20 @@ public class Player : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	void SetTrigger(string state)
+	{
+		if (anim != null)
+		{
+			anim.SetTrigger(state);
+		}
+	}
+	void SetState(string state, bool mode)
+	{
+		if (anim != null)
+		{
+			anim.SetBool(state, mode);
+		}
 	}
 }
