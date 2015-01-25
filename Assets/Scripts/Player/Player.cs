@@ -118,17 +118,12 @@ public class Player : MonoBehaviour
 		// calculate anchor dependant position
 		Vector3 p = position + anchorDist;
 		// synch movement directoin
-		bool movingRight = (p.x > transform.position.x);
+		bool movingRight = (p.x >= transform.position.x);
 		if ((movingRight && !facingRight) || (!movingRight && facingRight))
 		{
 			Flip();
 		}
-
-		StartCoroutine(StartWalking (p, moveDelay));
-	}
-
-	private IEnumerator StartWalking(Vector3 p, float delay)
-	{
+		
 		SetState ("Read", false);
 		SetState ("Sleep", false);
 		SetState ("Look", false);
@@ -140,6 +135,18 @@ public class Player : MonoBehaviour
 			book.SetActive(true);
 		}
 
+		if (Vector3.Distance(p, transform.position) > 0.05)
+		{
+			StartCoroutine(StartWalking (p, moveDelay));
+		}
+		else
+		{
+			OnWalkComplete();
+		}
+	}
+
+	private IEnumerator StartWalking(Vector3 p, float delay)
+	{
 		if (delay > 0f)
 			yield return new WaitForSeconds (delay);
 
@@ -198,7 +205,7 @@ public class Player : MonoBehaviour
 		StopWalking ();
 	}
 
-	void Flip()
+	public void Flip()
 	{
 		// invert graphics scale
 		Vector3 theScale = transform.localScale;
