@@ -7,7 +7,7 @@ public class ObjectShaker : MonoBehaviour
 	
 	void Update()
 	{
-		float rand = (Player.currentMadness - 3f);
+		float rand = (Player.currentMadness - 2);
 		rand = (rand < 0) ? 0 : rand;
 		rand *= 0.01f;
 		transform.position = p + new Vector3 (Random.Range(-rand,rand), Random.Range(-rand,rand), 0f);
