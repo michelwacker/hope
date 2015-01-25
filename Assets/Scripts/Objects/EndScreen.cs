@@ -11,9 +11,13 @@ public class EndScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(SceneManager.isGameOver()) {
-			Color c = sprite.color;
-			c.a = 1;
-			sprite.color = c;
+			iTween.FadeFrom (gameObject, iTween.Hash (
+				"alpha", 1f,
+				"amount", 0f,
+				"time", 3f,
+				"easetype", "easeInOutSine",
+				"looptype", "pingPong"
+				));
 		}
 	
 	}
