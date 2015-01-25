@@ -16,6 +16,8 @@ public class Sun : MonoBehaviour {
 	void Update () {
 		if(DayNightController.isDay()) {
 			gameObject.transform.position = Vector3.Lerp(beginPosition.transform.position, endPosition.transform.position, DayNightController.getDayRatio());
+		} else {
+			gameObject.transform.position = Vector3.Lerp(endPosition.transform.position, beginPosition.transform.position, DayNightController.getDayRatio());
 		}
 		
 	}
