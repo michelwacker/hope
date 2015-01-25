@@ -27,11 +27,16 @@ public class SceneManager : MonoBehaviour
 	{
 		instance = this;
 		hasEnded = false;
+		gameOver = false;
 	}
 
 	public void EndGame()
 	{
 		hasEnded = true;
+
+		AudioSource s = GetComponent<AudioSource> ();
+		if (s != null)
+						s.Stop ();
 
 		StartCoroutine (WaitForGameEnd());
 	}
