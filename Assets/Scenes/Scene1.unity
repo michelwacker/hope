@@ -537,6 +537,7 @@ GameObject:
   - 212: {fileID: 269917193}
   - 114: {fileID: 269917195}
   - 82: {fileID: 269917196}
+  - 95: {fileID: 269917197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -564,7 +565,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1bd84038eba9645988f71661853b31ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9e254244dfb942d78b5f5c7bc4be6bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &269917194
 Transform:
@@ -594,6 +595,7 @@ MonoBehaviour:
   moveDelay: .200000003
   verticalScaleFactor: .200000003
   walkingSound: {fileID: 8300000, guid: c3e3b2f65384e4a72b7fd785d462c96f, type: 3}
+  book: {fileID: 554106940}
 --- !u!82 &269917196
 AudioSource:
   m_ObjectHideFlags: 0
@@ -652,6 +654,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!95 &269917197
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 269917192}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5dee3133bd1bc436a9dbebe30ed0b930, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &304671999
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,33 +924,6 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!1 &400355416
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 400355417}
-  m_Layer: 0
-  m_Name: WalkAnchor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &400355417
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 400355416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0799999982, y: -4.53999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2117098109}
-  m_RootOrder: 1
 --- !u!1 &428572050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1100,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   madness: 0
+--- !u!1 &508206442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 508206443}
+  m_Layer: 0
+  m_Name: WalkAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &508206443
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508206442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.160000011, y: -4.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2117098109}
+  m_RootOrder: 1
 --- !u!1 &524046689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,16 +1165,30 @@ GameObject:
   - 212: {fileID: 554106943}
   - 95: {fileID: 554106942}
   - 60: {fileID: 554106947}
+  - 114: {fileID: 554106944}
   - 114: {fileID: 554106946}
   - 114: {fileID: 554106945}
-  - 114: {fileID: 554106944}
+  - 114: {fileID: 554106951}
+  - 114: {fileID: 554106950}
+  - 114: {fileID: 554106949}
+  - 114: {fileID: 554106953}
+  - 114: {fileID: 554106955}
+  - 114: {fileID: 554106954}
+  - 114: {fileID: 554106956}
+  - 114: {fileID: 554106948}
+  - 114: {fileID: 554106952}
+  - 114: {fileID: 554106958}
+  - 114: {fileID: 554106957}
+  - 114: {fileID: 554106960}
+  - 114: {fileID: 554106959}
+  - 114: {fileID: 554106961}
   m_Layer: 0
   m_Name: Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &554106941
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,9 +1273,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454c96edbc4d543729c6d28c9578f120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactWhenBroken: 1
+  interactWhenBroken: 0
   interactions:
   - {fileID: 554106945}
+  - {fileID: 554106951}
+  - {fileID: 554106953}
+  - {fileID: 554106956}
+  - {fileID: 554106958}
+  - {fileID: 554106960}
 --- !u!60 &554106947
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1292,6 +1328,196 @@ PolygonCollider2D:
       - {x: .349999994, y: -.439999998}
       - {x: .649999976, y: -.379999995}
       - {x: .730000019, y: -.389999986}
+--- !u!114 &554106948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60e5402b7a5e48d6b7735c971eba805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAnimator: {fileID: 269917197}
+  state: Read
+--- !u!114 &554106949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ce36f0ff0d4e5bb2da6c98e3e0b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  madness: -2
+--- !u!114 &554106950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: And they lived happily ever after... *sigh*
+--- !u!114 &554106951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd35ddd0ffdd42b3b1e685d049ab3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 1
+  moment: 2
+  actions:
+  - {fileID: 554106950}
+  - {fileID: 554106949}
+--- !u!114 &554106952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2c9d33c0b4944ee88e00ea0c33b7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: 0
+  targets:
+  - {fileID: 554106940}
+--- !u!114 &554106953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd35ddd0ffdd42b3b1e685d049ab3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 2
+  moment: 2
+  actions:
+  - {fileID: 554106955}
+  - {fileID: 554106954}
+--- !u!114 &554106954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ce36f0ff0d4e5bb2da6c98e3e0b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  madness: -1
+--- !u!114 &554106955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: Still a soothing story.
+--- !u!114 &554106956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd35ddd0ffdd42b3b1e685d049ab3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 3
+  moment: 1
+  actions:
+  - {fileID: 554106948}
+  - {fileID: 554106952}
+--- !u!114 &554106957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: Yawn!
+--- !u!114 &554106958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd35ddd0ffdd42b3b1e685d049ab3a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 2
+  moment: 0
+  actions:
+  - {fileID: 554106957}
+--- !u!114 &554106959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d54219ffd6ce04381a17279cc209273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output: Manipulative stack of toilet paper!
+--- !u!114 &554106960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f381da8d25f4a4167b871347c543b86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: 0
+  moment: 0
+  actions:
+  - {fileID: 554106959}
+  - {fileID: 554106961}
+--- !u!114 &554106961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554106940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ce36f0ff0d4e5bb2da6c98e3e0b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  madness: 1
 --- !u!1 &652977529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,7 +2319,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 969749558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.949999988, y: -1.32000005, z: 0}
+  m_LocalPosition: {x: -.419999987, y: -1.63999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2045684868}
@@ -4376,7 +4602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 738153317}
-  - {fileID: 400355417}
+  - {fileID: 508206443}
   m_Father: {fileID: 2054953446}
   m_RootOrder: 3
 --- !u!212 &2117098110
