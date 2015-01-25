@@ -27,7 +27,7 @@ public class SceneManager : MonoBehaviour
 		Debug.Log ("HandleWalkComplete");
 		ObjectInteraction oi = gameObject.GetComponent<ObjectInteraction> ();
 
-		if (oi == null || !oi.isBroken)
+		if (oi == null || !oi.isBroken || oi.interactWhenBroken)
 			interactionMenuManager.ShowMenu (gameObject);
 	}
 }
