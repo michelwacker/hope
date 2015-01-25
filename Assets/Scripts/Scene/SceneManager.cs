@@ -6,6 +6,11 @@ public class SceneManager : MonoBehaviour
 	public Player player;
 	public InteractionMenuManager interactionMenuManager;
 
+	public static void GameComplete()
+	{
+
+	}
+
 	void OnEnable()
 	{
 		Player.WalkBegin += HandleWalkBegin;
