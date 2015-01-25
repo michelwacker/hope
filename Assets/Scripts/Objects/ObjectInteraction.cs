@@ -5,6 +5,14 @@ public class ObjectInteraction : MonoBehaviour
 {
 	public MonoBehaviour[] interactions;
 
+	public bool isBroken
+	{
+		get
+		{
+			return timesCalledBreak > 0;
+		}
+	}
+
 	protected delegate void UseDelegate (int timesCalled);
 	protected UseDelegate useDelegate;
 
