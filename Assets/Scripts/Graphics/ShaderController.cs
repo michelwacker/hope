@@ -83,12 +83,24 @@ public class ShaderController : MonoBehaviour {
 				currentLightColor.g = MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r);
 				currentLightColor.b = MathHelper.Map (dayRatio, 0, 0.5f, begin.r, middle.r);
 				currentLightColor.a = 1;
+
+				if(dayRatio < 0.2) {
+					currentLightColor.r = MathHelper.Map (dayRatio, 0, 0.2f, currentAmbientColor.r, currentLightColor.r);
+					currentLightColor.g = MathHelper.Map (dayRatio, 0, 0.2f, currentAmbientColor.g, currentLightColor.g);
+					currentLightColor.b = MathHelper.Map (dayRatio, 0, 0.2f, currentAmbientColor.b, currentLightColor.b);
+				}
 			}
 			else {
 				currentLightColor.r = MathHelper.Map (dayRatio, 0.5f, 1, middle.r, end.r);
 				currentLightColor.g = MathHelper.Map (dayRatio, 0.5f, 1, middle.g, end.g);
 				currentLightColor.b = MathHelper.Map (dayRatio, 0.5f, 1, middle.b, end.b);
 				currentLightColor.a = 1;
+
+				if(dayRatio > 0.8) {
+					currentLightColor.r = MathHelper.Map (dayRatio, 0.8f, 1.0f, currentLightColor.r, currentAmbientColor.r);
+					currentLightColor.g = MathHelper.Map (dayRatio, 0.8f, 1.0f, currentLightColor.g, currentAmbientColor.g);
+					currentLightColor.b = MathHelper.Map (dayRatio, 0.8f, 1.0f, currentLightColor.b, currentAmbientColor.b);
+				}
 			}
 
 			shaderMaterial.SetColor("_LightColor", currentLightColor);
