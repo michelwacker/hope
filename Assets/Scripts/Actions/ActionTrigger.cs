@@ -40,7 +40,6 @@ public class ActionTrigger : MonoBehaviour
 
 	protected void CheckTiming(int timesCalled)
 	{
-		Debug.Log ("CheckTiming " + timesCalled);
 		switch (moment)
 		{
 			case Moment.After:

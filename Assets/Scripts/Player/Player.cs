@@ -90,6 +90,20 @@ public class Player : MonoBehaviour
 		initY = transform.position.y;
 	}
 
+	void OnEnable()
+	{
+		DayNightController.DayBegin += HandleDayBegin;
+	}
+	void OnDisable()
+	{
+		DayNightController.DayBegin -= HandleDayBegin;
+	}
+
+	void HandleDayBegin ()
+	{
+		Player.AddMadness (2);
+	}
+
 //	public void Read()
 //	{
 //		SetState ("Read", true);
@@ -187,7 +201,7 @@ public class Player : MonoBehaviour
 	private void StopWalking()
 	{
 		StopCoroutine (WaitDrawing());
-		iTween.Stop ();
+//		iTween.Stop ();
 		
 		SetState ("Walk", false);
 

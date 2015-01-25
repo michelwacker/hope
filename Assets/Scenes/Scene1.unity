@@ -262,33 +262,6 @@ Prefab:
   m_RootGameObject: {fileID: 674032385}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &81212023
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 81212024}
-  m_Layer: 0
-  m_Name: sunEnd
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &81212024
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 81212023}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.14000034, y: 4.11000013, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
 --- !u!1001 &98013081
 Prefab:
   m_ObjectHideFlags: 0
@@ -591,7 +564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &241022140
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +677,7 @@ Transform:
   m_Children:
   - {fileID: 1009844555}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!114 &269917195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -722,7 +695,7 @@ MonoBehaviour:
   walkingSound: {fileID: 8300000, guid: c3e3b2f65384e4a72b7fd785d462c96f, type: 3}
   book: {fileID: 554106940}
   friend: {fileID: 486024252}
-  maxMadness: 1
+  maxMadness: 10
 --- !u!82 &269917196
 AudioSource:
   m_ObjectHideFlags: 0
@@ -995,7 +968,7 @@ Transform:
   - {fileID: 2075953579}
   - {fileID: 1854843170}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!61 &353313758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1399,7 +1372,7 @@ Transform:
   - {fileID: 601853}
   - {fileID: 1050995960}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!212 &484755871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1659,7 +1632,7 @@ Transform:
   - {fileID: 1911869504}
   - {fileID: 755565051}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 13
+  m_RootOrder: 7
 --- !u!95 &486024249
 Animator:
   serializedVersion: 3
@@ -1807,33 +1780,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 902137860}
   m_RootOrder: 1
---- !u!1 &540263355
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 540263356}
-  m_Layer: 0
-  m_Name: sunBeginWindow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &540263356
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 540263355}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.17000008, y: 5.53999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
 --- !u!1 &554106940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,7 +2492,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
 --- !u!1 &698436104
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,33 +4407,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1465673291}
   m_RootOrder: 2
---- !u!1 &1608977069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1608977070}
-  m_Layer: 0
-  m_Name: sunBegin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1608977070
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1608977069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.52999973, y: 5.53999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
 --- !u!1 &1634120394
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,7 +4458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!114 &1634120397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4678,7 +4597,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
 --- !u!1 &1705404153
 GameObject:
   m_ObjectHideFlags: 0
@@ -4719,7 +4638,7 @@ Transform:
   - {fileID: 1261299959}
   - {fileID: 377255768}
   m_Father: {fileID: 2054953446}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!212 &1705404155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5116,7 +5035,7 @@ Transform:
   - {fileID: 673899701}
   - {fileID: 54928638}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 13
 --- !u!1 &1799033832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5500,33 +5419,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1080811518}
   m_RootOrder: 1
---- !u!1 &1969798960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1969798961}
-  m_Layer: 0
-  m_Name: sunEndWindow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1969798961
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1969798960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.93000007, y: 5.53999996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
 --- !u!1 &1980524560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5976,13 +5868,13 @@ Transform:
   - {fileID: 428572051}
   - {fileID: 902137860}
   - {fileID: 554106941}
+  - {fileID: 486024248}
   - {fileID: 269917194}
   - {fileID: 484755870}
   - {fileID: 353313757}
   - {fileID: 1705404154}
   - {fileID: 1634120396}
   - {fileID: 212039278}
-  - {fileID: 486024248}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &2054953447

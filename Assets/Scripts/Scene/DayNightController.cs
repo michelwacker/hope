@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class DayNightController : MonoBehaviour {
-
-
+	
 	const float DAY_DURATION = 30;
+	public static event Action DayBegin;
+	public static event Action DayEnd;
 
 	public Camera mainCamera;
 	public Color NightBeginColor;
@@ -17,6 +19,7 @@ public class DayNightController : MonoBehaviour {
 	private float dayRatio;
 	private float time;
 	private bool day = true;
+	int dayPeriod = 0;
 
 	private static DayNightController instance;
 
@@ -41,10 +44,27 @@ public class DayNightController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (SceneManager.isGameOver()) return;
+
 		time += Time.deltaTime;
 		if(time >= DAY_DURATION) {
 			day = !day;
 			time = 0;
+			dayPeriod++;
+
+//			Debug.Log ("DAY CHANGE");
+			if (dayPeriod % 2 == 0)
+			{
+				dayPeriod = 0;
+				Action handler = DayBegin;
+				if (handler != null) handler();
+			}
+			else
+			{
+				Action handler = DayEnd;
+				if (handler != null) handler();
+			}
+
 		}
 		dayRatio = time/DAY_DURATION;
 		setCameraBackgroundColor ();
