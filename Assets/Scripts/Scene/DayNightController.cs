@@ -4,7 +4,7 @@ using System.Collections;
 public class DayNightController : MonoBehaviour {
 
 
-	const float DAY_DURATION = 20;
+	const float DAY_DURATION = 30;
 
 	public Camera mainCamera;
 	public Color NightBeginColor;
