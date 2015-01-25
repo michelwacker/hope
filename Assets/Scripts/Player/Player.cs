@@ -11,6 +11,17 @@ public class Player : MonoBehaviour
 	{
 		instance.madness += madness;
 		Debug.Log("Player madness is " + instance.madness);
+
+		if (instance.madness >= instance.maxMadness)
+		{
+			if (!instance.friend.isVisible)
+				instance.friend.Show();
+		}
+	}
+	public static void SetMadness(int madness)
+	{
+		instance.madness = madness;
+		Debug.Log("Player madness is " + instance.madness);
 	}
 	public static int currentMadness
 	{
@@ -30,6 +41,9 @@ public class Player : MonoBehaviour
 	public AudioClip walkingSound;
 
 	public GameObject book;
+
+	public Friend friend;
+	public int maxMadness = 10;
 
 	private AudioSource source;
 	private float initY;
