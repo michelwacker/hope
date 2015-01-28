@@ -19,6 +19,7 @@ public class ShaderController : MonoBehaviour {
 
 	private Color currentAmbientColor = new Color();
 	private Color currentLightColor = new Color();
+	private float shaderMadness = 0;
 
 	void Update() {
 
@@ -29,8 +30,32 @@ public class ShaderController : MonoBehaviour {
 		shaderMaterial.SetInt("_Day", day);
 		shaderMaterial.SetInt("_GameOver", gameOver);
 		shaderMaterial.SetFloat("_DayRatio", DayNightController.getDayRatio());
-		//shaderMaterial.SetVector("_InsanityVector", new Vector4(Random.Range(-0.02f, 0.02f), Random.Range(-0.02f, 0.02f), 0,0 ));
-		//shaderMaterial.SetVector("_InsanityVector2", new Vector4(Random.Range(-0.01f, 0.01f), Random.Range(-0.01f, 0.01f), 0,0 ));
+		int madness = Player.currentMadness;
+		if(madness > 2) {
+			shaderMaterial.SetInt("_Insane", 1);
+			//Debug.Log("MadnessRAtio " +  MathHelper.Map(madness, 3, Player.maxMadness, 0, 1f));
+			shaderMaterial.SetFloat("_MadnessRatio", MathHelper.Map(madness, 3, Player.maxMadness, 0, 1f));
+			float madnessFactor = MathHelper.Map(madness, 2, Player.maxMadness, 0.005f, 0.02f);
+			//float insanity1x = Random.Range(-madnessFactor, madnessFactor);
+			//float insanity1y = Random.Range(-madnessFactor, madnessFactor);
+
+			//float insanity1x = MathHelper.Map(Mathf.PerlinNoise(Time.time * madnessFactor, 0.0F), 0, 1, 0.005f, 0.02f);
+			//float insanity1y = MathHelper.Map(Mathf.PerlinNoise(Time.time * madnessFactor, 10.0F), 0, 1, 0.005f, 0.02f);
+			float insanity1x = MathHelper.Map(Mathf.PerlinNoise(Time.time * madness , 0.0F), 0, 1, -madnessFactor, madnessFactor);
+			float insanity1y = MathHelper.Map(Mathf.PerlinNoise(Time.time * madness, 10.0F), 0, 1, -madnessFactor, madnessFactor);
+
+
+			shaderMaterial.SetVector("_InsanityVector", new Vector4(insanity1x, insanity1y, 0, 0));
+			if(madness > 4) {
+				float madnessFactor2 = MathHelper.Map((madness - 2), 5, Player.maxMadness, 0.005f, 0.02f);
+				float insanity2x = MathHelper.Map(Mathf.PerlinNoise(Time.time * (madness - 2) , 20.0F), 0, 1, -madnessFactor2, madnessFactor2);
+				float insanity2y = MathHelper.Map(Mathf.PerlinNoise(Time.time * (madness - 2), 30.0F), 0, 1, -madnessFactor2, madnessFactor2);
+				shaderMaterial.SetVector("_InsanityVector2", new Vector4(insanity2x, insanity2y, 0, 0));
+			}
+		} else {
+			shaderMaterial.SetInt("_Insane", 0);
+		}
+
 	}
 
 	private void setShaderAmbientColor ()

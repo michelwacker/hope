@@ -12,8 +12,9 @@ public class Player : MonoBehaviour
 		instance.madness += madness;
 		Debug.Log("Player madness is " + instance.madness);
 
-		if (instance.madness >= instance.maxMadness)
+		if (instance.madness >= maxMadness)
 		{
+			instance.madness = maxMadness;
 			if (!instance.friend.isVisible)
 				instance.friend.Show();
 		}
@@ -43,7 +44,7 @@ public class Player : MonoBehaviour
 	public GameObject book;
 
 	public Friend friend;
-	public int maxMadness = 10;
+	public const int maxMadness = 10;
 
 	private AudioSource source;
 	private float initY;
