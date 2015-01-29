@@ -20,13 +20,28 @@ public class InputCheck : MonoBehaviour
 			_inputHandler = (IInputHandler) inputHandler;
 		}
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
 		if (blocked) return;
 		
-		#if UNITY_EDITOR
+
+		#if UNITY_IPHONE || UNITY_ANDROID
+		
+		if (allowMultitouch)
+		{
+			foreach (Touch touch in Input.touches)
+			{
+				EvalTouch(touch);
+			}
+		}
+		else if (Input.touches.Length > 0)
+		{
+			EvalTouch(Input.touches[0]);
+		}
+#else
+		
 		
 		//		Debug.Log("Unity Editor");
 		if (Input.GetMouseButtonDown(0))
@@ -47,20 +62,7 @@ public class InputCheck : MonoBehaviour
 			UpdatePosition(Input.mousePosition);
 		}
 		
-		
-		#elif UNITY_IPHONE || UNITY_ANDROID
-		
-		if (allowMultitouch)
-		{
-			foreach (Touch touch in Input.touches)
-			{
-				EvalTouch(touch);
-			}
-		}
-		else if (Input.touches.Length > 0)
-		{
-			EvalTouch(Input.touches[0]);
-		}
+
 		#endif
 	}
 	
