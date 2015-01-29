@@ -695,7 +695,6 @@ MonoBehaviour:
   walkingSound: {fileID: 8300000, guid: c3e3b2f65384e4a72b7fd785d462c96f, type: 3}
   book: {fileID: 554106940}
   friend: {fileID: 486024252}
-  maxMadness: 10
 --- !u!82 &269917196
 AudioSource:
   m_ObjectHideFlags: 0
