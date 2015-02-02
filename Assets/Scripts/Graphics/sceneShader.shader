@@ -61,39 +61,40 @@ SubShader {
 					half4 volumetricLight = tex2D (_VolumetricLight, IN.uv);
                     half4 lightMapTex = tex2D (_Lightmap, IN.uv);
                     half4 sceneMapTex = tex2D (_Scenemap, IN.uv);
+                    
+                    half2 uv2 = IN.uv;
+			       	half2 uv3 = IN.uv;
+			                    
+			        uv2.x += _InsanityVector.x;
+			        uv2.y += _InsanityVector.y;
+			                    
+			        uv3.x += _InsanityVector2.x;
+			        uv3.y += _InsanityVector2.y;
+                    
+                    half4 diffuseTex2 = tex2D(_MainTex, uv2);
+			        half4 diffuseTex3 = tex2D(_MainTex, uv3);
+			        
                     half4 fragColor;
                     if(_GameOver == 1) {
                     	fragColor = diffuseTex;
                     } else {
                     	if(_Insane != 0) { 
-			                    half2 uv2 = IN.uv;
-			                    half2 uv3 = IN.uv;
-			                    
-			                    uv2.x += _InsanityVector.x;
-			                    uv2.y += _InsanityVector.y;
-			                    
-			                    uv3.x += _InsanityVector2.x;
-			                    uv3.y += _InsanityVector2.y;
-			                    
-			                    half4 diffuseTex2 = tex2Dlod(_MainTex, uv2);
-			                    half4 diffuseTex3 = tex2Dlod(_MainTex, uv3);
-			                    if(diffuseTex2.b < _MadnessRatio) {
-			                    	diffuseTex2.b = _MadnessRatio;
-			                    }
-			                    diffuseTex2.b = 1;
-			                   	diffuseTex2 = lerp(half4(1,1,1,1), diffuseTex2, _MadnessRatio);
-			                    diffuseTex *= diffuseTex2;
-			                    
-			                    if (uv3.x != 0 || uv3.y != 0) {
-			                    	diffuseTex3.a = 0.3;
-			                    	if(diffuseTex3.r < _MadnessRatio) {
-			                    		diffuseTex3.r = _MadnessRatio;
-			                    	} diffuseTex3.r = 1;
-			                    	diffuseTex3 = lerp(half4(1,1,1,1), diffuseTex3, _MadnessRatio);
-			                    	diffuseTex *= diffuseTex3;
-			                    }
-			                    
+			                if(diffuseTex2.b < _MadnessRatio) {
+		                    	diffuseTex2.b = _MadnessRatio;
 		                    }
+		                    diffuseTex2.b = 1;
+		                   	diffuseTex2 = lerp(half4(1,1,1,1), diffuseTex2, _MadnessRatio);
+		                    diffuseTex *= diffuseTex2;
+		                    
+		                    if (uv3.x != 0 || uv3.y != 0) {
+		                    	diffuseTex3.a = 0.3;
+		                    	if(diffuseTex3.r < _MadnessRatio) {
+		                    		diffuseTex3.r = _MadnessRatio;
+		                    	} diffuseTex3.r = 1;
+		                    	diffuseTex3 = lerp(half4(1,1,1,1), diffuseTex3, _MadnessRatio);
+		                    	diffuseTex *= diffuseTex3;
+		                    }
+		                }
                     	if(sceneMapTex.a == 0) {
                     		if(volumetricLight.a > 0.1 && _Day == 1) {
                     			fragColor = diffuseTex * _LightColor;
