@@ -75,8 +75,8 @@ SubShader {
 			                    uv3.x += _InsanityVector2.x;
 			                    uv3.y += _InsanityVector2.y;
 			                    
-			                    half4 diffuseTex2 = tex2D (_MainTex, uv2);
-			                    half4 diffuseTex3 = tex2D (_MainTex, uv3);
+			                    half4 diffuseTex2 = tex2Dlod(_MainTex, uv2);
+			                    half4 diffuseTex3 = tex2Dlod(_MainTex, uv3);
 			                    if(diffuseTex2.b < _MadnessRatio) {
 			                    	diffuseTex2.b = _MadnessRatio;
 			                    }
